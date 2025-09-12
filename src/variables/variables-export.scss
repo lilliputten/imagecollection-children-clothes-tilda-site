@@ -1,0 +1,9 @@
+@use 'variables' as *;
+
+// stylelint-disable selector-pseudo-class-no-unknown, property-no-unknown
+:export {
+  // Tresholds...
+  smallTreshold: #{$smallTreshold};
+  mobileTreshold: #{$mobileTreshold};
+  wideTreshold: #{$wideTreshold};
+}

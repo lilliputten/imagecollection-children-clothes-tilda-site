@@ -1,0 +1,92 @@
+@mixin selfActiveLink {
+  transition: all var(--transitionTimeMs);
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+@mixin basicActiveLink {
+  button,
+  a {
+    @include selfActiveLink;
+  }
+}
+
+@mixin activeLink {
+  @include basicActiveLink;
+  button,
+  a {
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+}
+
+@mixin WithVisualColumn {
+  .t195__imgsection {
+    img {
+      border-radius: 20px;
+      border: 3px solid var(--themeRedColor);
+      padding: 0;
+    }
+  }
+  @media (width <= $mobileTreshold) {
+    .t-container {
+      display: flex;
+      flex-direction: column;
+    }
+    .t-col {
+      order: 2;
+    }
+    .t195__imgsection {
+      order: 1;
+    }
+  }
+}
+
+@mixin SectionTitleDelim($size: 4px, $width: 200px, $marginTop: 10px, $left: false) {
+  display: block;
+  height: $size;
+  background-color: var(--primaryColor);
+  content: '';
+  width: $width;
+  margin: 0 auto;
+  margin-top: $marginTop;
+  @if $left {
+    margin-left: 0;
+  }
+}
+
+@mixin BlockWithTitle {
+  .t-title {
+    font-size: 40px;
+    &:after {
+      @include SectionTitleDelim($size: 4px, $width: 200px);
+    }
+  }
+  // NOTE: It affects the bottom comment in form blocks.
+  // .t-descr {
+  //   font-size: 22px;
+  // }
+}
+
+@mixin SocialLinksWrapper($color: var(--primaryColor)) {
+  .t-sociallinks__wrapper {
+    list-style: none;
+    // padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    li {
+      display: inline-block;
+      a {
+        display: inline-block;
+        svg {
+          path {
+            fill: $color;
+          }
+        }
+      }
+    }
+  }
+}

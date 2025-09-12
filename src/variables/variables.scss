@@ -1,0 +1,28 @@
+$primaryColor: #f73;
+$themeOrangeColor: $primaryColor;
+
+$socialIconSize: 32px;
+$socialIconSmallSize: 22px;
+
+// Delays
+
+$transitionTimeMs: 250ms;
+$animationTimeMs: 500ms;
+$disappearTimeMs: 1000ms;
+
+// NavHeader
+
+$navbarHeight: 72px;
+$topMenuHeight: 72px;
+
+// Fonts
+
+$defaultFont: 'Inter', Arial, sans-serif;
+$titleFont: 'Russo One', Arial, sans-serif;
+$defaultFontSize: 16px;
+
+// Adaptive layouts...
+
+$smallTreshold: 660px;
+$mobileTreshold: 980px;
+$wideTreshold: 1200px;

@@ -8,8 +8,17 @@
 }
 
 :root {
+  --themeBgColor: #{$themeBgColor};
+  --themeBgRGB: #{rgbComponents($themeBgColor)};
+
   --primaryColor: #{$primaryColor};
-  --primaryRBG: #{rgbComponents($primaryColor)};
+  --primaryRGB: #{rgbComponents($primaryColor)};
+
+  --themeOrangeColor: #{$themeOrangeColor};
+  --themeOrangeRGB: #{rgbComponents($themeOrangeColor)};
+
+  --lightBlueColor: #{$lightBlueColor};
+  --lightBlueRGB: #{rgbComponents($lightBlueColor)};
 
   --defaultFont: #{$defaultFont};
   --titleFont: #{$titleFont};

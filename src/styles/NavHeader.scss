@@ -1,0 +1,49 @@
+// @use 'sass:math';
+
+@use '../variables' as *;
+
+#allrecords .uc-NavHeader {
+  // Links...
+  @include activeLink;
+  a:hover {
+    color: var(--themeOrangeColor);
+  }
+  button.t-menuburger:hover span {
+    background-color: var(--themeOrangeColor) !important;
+  }
+  .t-menu__list {
+    a:hover {
+      opacity: 1;
+    }
+  }
+
+  @media (width > $mobileTreshold) {
+    .t228 {
+      margin: 15px auto;
+      left: 20px;
+      right: 20px;
+      width: auto;
+    }
+    .t228__maincontainer {
+      background-color: rgba(var(--themeBgRGB) / 80%);
+      backdrop-filter: blur(5px);
+      border-radius: 10px;
+    }
+  }
+  @media (width <= $mobileTreshold) {
+    .tmenu-mobile {
+      background-color: rgba(var(--themeBgRGB) / 100%);
+    }
+    .t228__maincontainer {
+      background-color: rgba(var(--themeBgRGB) / 90%);
+    }
+  }
+  @media (width <= 450px) {
+    .tmenu-mobile__burgerlogo {
+      img {
+        max-width: 85% !important;
+        margin: 0;
+      }
+    }
+  }
+}

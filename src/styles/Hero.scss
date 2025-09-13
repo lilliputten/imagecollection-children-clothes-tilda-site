@@ -1,0 +1,142 @@
+// @use 'sass:math';
+
+@use '../variables' as *;
+
+#allrecords .uc-Hero {
+  // position: relative;
+
+  @include activeLink;
+
+  // Add padding for NavHeader
+  $navHeaderTopPadding: 90px;
+  @media (width > $mobileTreshold) {
+    .t-slds__item {
+      padding-top: $navHeaderTopPadding;
+    }
+  }
+  @media (width <=$mobileTreshold) {
+    .t734__wrapper {
+      padding-top: 30px;
+    }
+  }
+
+  @mixin setBackground($position: 50% bottom, $size: cover) {
+    .t-cover {
+      .t-cover__carrier {
+        background-position: $position !important;
+        background-size: $size !important;
+      }
+    }
+  }
+  @mixin setHeight($height, $extraHeight: false) {
+    .t-slds__items-wrapper,
+    .t-cover__wrapper,
+    .t734__table,
+    .t-cover .t-cover__carrier,
+    .t-cover {
+      height: $height !important;
+    }
+    // @media (width > $mobileTreshold) {
+    @if $extraHeight {
+      .t-slds__items-wrapper {
+        height: calc($height + $navHeaderTopPadding) !important;
+      }
+    }
+  }
+  @mixin setTextSize($factor: 1) {
+    .t-title {
+      font-size: calc(2.5em * $factor); // 44px
+    }
+    .t-descr {
+      font-size: calc(1.5em * $factor); // 18px;
+      margin-top: calc(1em * $factor);
+    }
+    .t-btn {
+      font-size: calc(1.5em * $factor); // 18px;
+      margin-top: calc(2em * $factor);
+      padding: calc(1em * $factor) calc(3em * $factor);
+    }
+  }
+  @mixin setWrapperWidth($width: 45%) {
+    .t734__wrapper {
+      max-width: $width; // 640px
+    }
+  }
+  // Size: Default
+  & {
+    @include setHeight(640px, true);
+    @include setBackground(5% bottom, auto 100%);
+    @include setWrapperWidth(40%);
+    @include setTextSize(1);
+    .t734__textwrapper {
+      text-align: left;
+    }
+  }
+  // Size <= 1400
+  @media (width <= $extraWideTreshold) {
+    @include setHeight(520px, true);
+    @include setBackground(0% bottom, auto 100%);
+    // @include setWrapperWidth(500px);
+    @include setTextSize(0.85);
+  }
+  // Size <= 1200
+  @media (width <= $wideTreshold) {
+    @include setHeight(400px, true);
+    // @include setBackground(0% bottom, auto 100%);
+    @include setWrapperWidth(55%);
+    @include setTextSize(0.75);
+  }
+  // Size <= 980
+  @media (width <= $mobileTreshold) {
+    @include setHeight(320px);
+    @include setWrapperWidth(50%);
+    @include setTextSize(0.55);
+  }
+  // Size <= 660
+  @media (width <= $smallTreshold) {
+    // @include setHeight(380px);
+    @include setBackground(center bottom, auto 60%);
+    @include setWrapperWidth(100%);
+    @include setTextSize(0.45);
+    .t-cover__wrapper {
+      vertical-align: top;
+    }
+    .t734__textwrapper {
+      text-align: center;
+    }
+  }
+  // Size: Minmals
+  @media (width <= 400px) {
+    @include setBackground(center bottom, auto 50%);
+  }
+  @media (width <= 320px) {
+    @include setTextSize(0.4);
+  }
+
+  // Background style
+  .t-slds__items-wrapper {
+    // background: linear-gradient(115deg, $lightBlueColor, rgba(var(--lightBlueRGB) / 20%));
+  }
+  .t-slds__item {
+    transition: background 250ms;
+    background: linear-gradient(115deg, $lightBlueColor, rgba(var(--lightBlueRGB) / 20%));
+    &:nth-child(2) {
+      background:
+        linear-gradient(217deg, rgba(255 0 0 / 0.2), transparent 70%),
+        linear-gradient(127deg, rgba(var(--lightBlueRGB) / 50%), transparent 70%),
+        linear-gradient(90deg, rgba(0 0 255 / 0.2), transparent 70%); // r-bot
+    }
+    &:nth-child(3) {
+      background:
+        linear-gradient(127deg, rgba(255 0 0 / 0.1), transparent 70%),
+        linear-gradient(217deg, $lightBlueColor, transparent 70%),
+        linear-gradient(90deg, rgba(0 0 255 / 0.2), transparent 70%); // r-bot
+    }
+    &:nth-child(4) {
+      background:
+        linear-gradient(90deg, rgba(255 0 0 / 0.2), transparent 70%),
+        linear-gradient(217deg, rgba(0 0 255 / 0.2), transparent 70%),
+        linear-gradient(127deg, $lightBlueColor, transparent 70%); // r-bot
+    }
+  }
+}

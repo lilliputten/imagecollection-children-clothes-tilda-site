@@ -127,7 +127,11 @@ module.exports = {
       filename: 'styles.css',
     }),
     new CopyPlugin({
-      patterns: [{ from: appInfoFile }],
+      patterns: [
+        // Copy files
+        { from: appInfoFile },
+        { from: 'public' },
+      ],
     }),
     new HtmlWebpackPlugin({
       template: 'src/template-header.html',

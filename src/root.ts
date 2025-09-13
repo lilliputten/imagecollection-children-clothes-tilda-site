@@ -9,7 +9,6 @@ import './styles';
 
 import { isDebug } from './core/constants/isDebug';
 import { isDev } from './core/constants/isDev';
-import projectInfo from './project-info.json';
 
 /** Print app info */
 function printAppInfo() {
@@ -26,10 +25,6 @@ function initPage() {
   // Start subcomponents...
   // Forcibely update components' dimensions
   window.dispatchEvent(new Event('resize'));
-  console.log('[root]', {
-    projectInfo,
-  });
-  debugger;
 }
 
 printAppInfo();

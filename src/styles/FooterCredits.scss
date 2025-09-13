@@ -1,0 +1,12 @@
+@use '../variables' as *;
+
+#allrecords .uc-FooterCredits {
+  @include activeLink;
+  a {
+    &:hover {
+      &, * {
+        text-decoration: underline;
+      }
+    }
+  }
+}

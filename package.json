@@ -1,8 +1,8 @@
 {
   "name": "imagecollection-children-clothes-tilda-site",
-  "version": "0.0.0",
-  "timetag": "250912-2114",
-  "timestamp": "2025.09.12 21:14:18 +0300",
+  "version": "0.0.1",
+  "timetag": "250914-0238",
+  "timestamp": "2025.09.14 02:38:35 +0300",
   "changed": "2025.09.12, 20:51",
   "description": "Compillable js and css assets for imagecollection children clothes tilda site",
   "main": "index.html",

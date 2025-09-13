@@ -1,0 +1,21 @@
+@use '../variables' as *;
+
+#allrecords .uc-StoreGrid {
+  @include basicActiveLink;
+  // @include activeLink;
+  // border: 1px solid purple; // DEBUG
+  .js-product-img {
+    border-radius: 10px;
+  }
+  .t-store__card__imgwrapper {
+    // Adjust layout for more taller images
+    padding-bottom: 135%;
+  }
+  .t-btn {
+    transition: all var(--transitionTimeMs);
+    &:hover {
+      background-color: $themeOrangeColor !important;
+      opacity: 1;
+    }
+  }
+}

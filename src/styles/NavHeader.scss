@@ -2,7 +2,7 @@
 
 #allrecords .uc-NavHeader {
   // Links...
-  @include activeLink;
+  @include basicActiveLink;
   a:hover {
     color: var(--themeOrangeColor);
   }
@@ -18,14 +18,22 @@
   @media (width > $mobileTreshold) {
     .t228 {
       margin: 15px auto;
-      left: 20px;
-      right: 20px;
+      $hPadding: 20px;
+      left: $hPadding;
+      right: $hPadding;
       width: auto;
     }
     .t228__maincontainer {
       background-color: rgba(var(--themeBgRGB) / 80%);
       backdrop-filter: blur(5px);
       border-radius: 10px;
+      $hPadding: 20px;
+      @media (width > $mobileTreshold) {
+        max-width: calc($mobileTreshold - ($hPadding * 2));
+      }
+      @media (width > $wideTreshold) {
+        max-width: calc($wideTreshold - ($hPadding * 2));
+      }
     }
   }
   @media (width <= $mobileTreshold) {

@@ -1,0 +1,79 @@
+@use '../variables' as *;
+
+#allrecords {
+  .uc-StoreHeader {
+    @include basicActiveLink;
+    .t-container {
+      .t-col:nth-child(1) {
+        // border: 1px solid green; // DEBUG
+        font-size: 1.5em;
+        text-transform: uppercase;
+      }
+      .t-col:nth-child(2) {
+        // border: 1px solid pink; // DEBUG
+        @media (width > $mobileTreshold) {
+          justify-content: flex-end;
+        }
+        .t-btn {
+          border-radius: 5px;
+          // border: 1px solid #333 !important;
+          transition: all var(--transitionTimeMs);
+          background-color: $themeBgColor;
+          color: #fff;
+          padding: 0.5em 2em;
+          &:hover {
+            background-color: $themeOrangeColor;
+            opacity: 1;
+            // color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .t-store.t-store__prod-snippet__container {
+    padding-top: 50px;
+  }
+  .js-store-product.js-product {
+    @include basicActiveLink;
+    // border: 1px solid green; // DEBUG
+    .t-slds__arrow {
+      transition: all var(--transitionTimeMs);
+      &:hover {
+        background-color: $themeOrangeColor !important;
+        opacity: 1;
+      }
+    }
+    .t-btn {
+      transition: all var(--transitionTimeMs);
+      &:hover {
+        background-color: $themeOrangeColor !important;
+        opacity: 1;
+      }
+    }
+  }
+}
+.t-zoomer__wrapper {
+  .t-zoomer__scale,
+  .t-zoomer__close {
+    transition: all var(--transitionTimeMs);
+    &:hover {
+      background-color: $themeOrangeColor !important;
+      opacity: 1;
+    }
+  }
+  .t-carousel__zoomer__control {
+    &,
+    .t-carousel__zoomer__arrow__wrapper,
+    .t-carousel__zoomer__arrow__wrapper:before {
+      transition: all var(--transitionTimeMs);
+    }
+    &:hover {
+      opacity: 1;
+      .t-carousel__zoomer__arrow__wrapper {
+        &:before {
+          background-color: $themeOrangeColor !important;
+        }
+      }
+    }
+  }
+}

@@ -6,3 +6,5 @@ import './FooterCredits.scss';
 import './FooterLogo.scss';
 import './FooterSchedule.scss';
 import './FooterSocials.scss';
+import './StoreGrid.scss';
+import './StoreProduct.scss';

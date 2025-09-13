@@ -3,7 +3,7 @@
 #allrecords .uc-Hero {
   // position: relative;
 
-  @include activeLink;
+  // @include activeLink;
 
   // Add padding for NavHeader
   $navHeaderTopPadding: 90px;
@@ -119,22 +119,38 @@
     transition: background 250ms;
     background: linear-gradient(115deg, $lightBlueColor, rgba(var(--lightBlueRGB) / 20%));
     &:nth-child(2) {
-      background:
-        linear-gradient(217deg, rgba(255 0 0 / 0.2), transparent 70%),
+      background: linear-gradient(217deg, rgba(255 0 0 / 0.2), transparent 70%),
         linear-gradient(127deg, rgba(var(--lightBlueRGB) / 50%), transparent 70%),
         linear-gradient(90deg, rgba(0 0 255 / 0.2), transparent 70%); // r-bot
     }
     &:nth-child(3) {
-      background:
-        linear-gradient(127deg, rgba(255 0 0 / 0.1), transparent 70%),
+      background: linear-gradient(127deg, rgba(255 0 0 / 0.1), transparent 70%),
         linear-gradient(217deg, $lightBlueColor, transparent 70%),
         linear-gradient(90deg, rgba(0 0 255 / 0.2), transparent 70%); // r-bot
     }
     &:nth-child(4) {
-      background:
-        linear-gradient(90deg, rgba(255 0 0 / 0.2), transparent 70%),
+      background: linear-gradient(90deg, rgba(255 0 0 / 0.2), transparent 70%),
         linear-gradient(217deg, rgba(0 0 255 / 0.2), transparent 70%),
         linear-gradient(127deg, $lightBlueColor, transparent 70%); // r-bot
+    }
+  }
+
+  // Interactive navigation
+  .t-slds__arrow {
+    transition: all var(--transitionTimeMs);
+    &:hover {
+      background-color: $themeOrangeColor !important;
+      opacity: 1;
+    }
+  }
+  .t-slds__bullet {
+    button {
+      transition: all var(--transitionTimeMs);
+    }
+    &:hover button {
+      background-color: $themeOrangeColor !important;
+      border-color: $themeOrangeColor !important;
+      opacity: 1;
     }
   }
 }

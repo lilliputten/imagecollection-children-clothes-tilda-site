@@ -9,7 +9,7 @@ import './styles';
 
 import { isDebug } from './core/constants/isDebug';
 import { isDev } from './core/constants/isDev';
-import { initStoreProduct } from './StoreProduct';
+import { initSubPage } from './SubPage';
 
 /** Print app info */
 function printAppInfo() {
@@ -24,7 +24,7 @@ function printAppInfo() {
 /** Init all the page */
 function initPage() {
   // Start subcomponents...
-  initStoreProduct();
+  initSubPage();
   // Forcibely update components' dimensions
   window.dispatchEvent(new Event('resize'));
 }

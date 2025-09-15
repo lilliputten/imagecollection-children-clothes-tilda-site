@@ -1,0 +1,13 @@
+@use '../variables' as *;
+
+#allrecords .uc-Blog {
+  // @include activeLink;
+  .t-feed__col-grid__post-wrapper {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all var(--transitionTimeMs);
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+}

@@ -1,5 +1,7 @@
 @use '../variables' as *;
 
+// TODO: Fix an initial render bug on screen widths ~620-780px
+
 #allrecords .uc-Hero {
   // position: relative;
 
@@ -80,20 +82,21 @@
   // Size <= 1200
   @media (width <= $wideTreshold) {
     @include setHeight(400px, true);
-    // @include setBackground(0% bottom, auto 100%);
+    @include setBackground(0% bottom, auto 100%);
     @include setWrapperWidth(55%);
     @include setTextSize(0.75);
   }
   // Size <= 980
   @media (width <= $mobileTreshold) {
     @include setHeight(320px);
+    @include setBackground(0% bottom, auto 100%);
     @include setWrapperWidth(50%);
     @include setTextSize(0.55);
   }
   // Size <= 660
   @media (width <= $smallTreshold) {
-    // @include setHeight(380px);
-    @include setBackground(center bottom, auto 60%);
+    @include setHeight(480px);
+    @include setBackground(center bottom, auto 70%);
     @include setWrapperWidth(100%);
     @include setTextSize(0.45);
     .t-cover__wrapper {
@@ -105,7 +108,7 @@
   }
   // Size: Minmals
   @media (width <= 400px) {
-    @include setBackground(center bottom, auto 50%);
+    @include setBackground(center bottom, auto 65%);
   }
   @media (width <= 320px) {
     @include setTextSize(0.4);

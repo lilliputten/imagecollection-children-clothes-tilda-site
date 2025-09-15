@@ -7,4 +7,6 @@ import './FooterLogo.scss';
 import './FooterSchedule.scss';
 import './FooterSocials.scss';
 import './StoreGrid.scss';
-import './StoreProduct.scss';
+import './SubPage.scss';
+import './FormWithImage.scss';
+import './Blog.scss';

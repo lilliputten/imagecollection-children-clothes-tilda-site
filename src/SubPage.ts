@@ -1,5 +1,5 @@
-export function initStoreProduct() {
-  const btnNode = document.querySelector('.uc-StoreHeader .t-btn');
+export function initSubPage() {
+  const btnNode = document.querySelector('.uc-SubPageHeader .t-btn');
   if (!btnNode) {
     return;
   }

@@ -1,7 +1,7 @@
 @use '../variables' as *;
 
 #allrecords {
-  .uc-StoreHeader {
+  .uc-SubPageHeader {
     @include basicActiveLink;
     .t-container {
       .t-col:nth-child(1) {
@@ -9,7 +9,9 @@
         font-size: 1.5em;
         text-transform: uppercase;
       }
+      // t185__butwrapper
       .t-col:nth-child(2) {
+        display: flex;
         // border: 1px solid pink; // DEBUG
         @media (width > $mobileTreshold) {
           justify-content: flex-end;
@@ -48,6 +50,13 @@
       &:hover {
         background-color: $themeOrangeColor !important;
         opacity: 1;
+      }
+    }
+  }
+  .t-feed__post-popup {
+    .t-feed__post-popup__cover-wrapper {
+      img {
+        border-radius: 10px;
       }
     }
   }

@@ -9,6 +9,7 @@ import './styles';
 
 import { isDebug } from './core/constants/isDebug';
 import { isDev } from './core/constants/isDev';
+import { initHero } from './Hero';
 import { initSubPage } from './SubPage';
 
 /** Print app info */
@@ -24,6 +25,7 @@ function printAppInfo() {
 /** Init all the page */
 function initPage() {
   // Start subcomponents...
+  initHero();
   initSubPage();
   // Forcibely update components' dimensions
   window.dispatchEvent(new Event('resize'));

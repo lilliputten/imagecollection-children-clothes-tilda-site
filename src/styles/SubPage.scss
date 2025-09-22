@@ -3,6 +3,8 @@
 #allrecords {
   .uc-SubPageHeader {
     @include basicActiveLink;
+
+    // Page header with a 'Back' button
     .t-container {
       .t-col:nth-child(1) {
         // border: 1px solid green; // DEBUG
@@ -32,9 +34,13 @@
       }
     }
   }
+
+  // Adjust whole product card layout
   .t-store.t-store__prod-snippet__container {
     padding-top: 50px;
   }
+
+  // Inner product card
   .js-store-product.js-product {
     @include basicActiveLink;
     // border: 1px solid green; // DEBUG
@@ -52,7 +58,30 @@
         opacity: 1;
       }
     }
+    // Product price
+    .js-product-price {
+      font-size: 2em;
+    }
+    .js-product-price,
+    .t-store__prod-popup__price-currency {
+      vertical-align: baseline;
+    }
   }
+
+  // Product images
+  .t-slds__container,
+  .t-slds__bgimg {
+    border-radius: 10px;
+  }
+  .t-slds__thumbsbullet-border,
+  .t-slds__thumbsbullet .t-slds__bgimg {
+    border-radius: 5px;
+  }
+  .t-slds__bullet_active .t-slds__thumbsbullet-border {
+    border-color: var(--themeOrangeColor);
+  }
+
+  // Blog post image
   .t-feed__post-popup {
     .t-feed__post-popup__cover-wrapper {
       img {
@@ -61,6 +90,8 @@
     }
   }
 }
+
+// Carousel popup controls
 .t-zoomer__wrapper {
   .t-zoomer__scale,
   .t-zoomer__close {
@@ -84,5 +115,9 @@
         }
       }
     }
+  }
+  // Image
+  .t-carousel__zoomer__img {
+    border-radius: 10px;
   }
 }

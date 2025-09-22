@@ -5,6 +5,14 @@ function initHeroCover(node: HTMLDivElement) {
   const bgUrlStr = contentCoverBg && `url("${contentCoverBg}")`;
   // Restore the original background image
   if (bgUrlStr && bgUrlStr !== backgroundImage) {
+    /* console.log('[Hero:initHeroCover] Restoring the original banner image', {
+     *   bgUrlStr,
+     *   // contentCoverBg,
+     *   backgroundImage,
+     *   dataset,
+     *   node,
+     * });
+     */
     requestAnimationFrame(() => (node.style.backgroundImage = bgUrlStr));
   }
 }
@@ -13,6 +21,7 @@ function checkMutation(mutation: MutationRecord) {
   if (mutation.type === 'attributes') {
     const { attributeName, target } = mutation;
     const node = target as HTMLDivElement;
+    // TODO: Also check the `style` attribute?
     if (attributeName === 'class' && node.classList.contains('loaded')) {
       initHeroCover(node);
       return true;
@@ -34,7 +43,7 @@ export function initHero() {
       const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
           if (checkMutation(mutation)) {
-            observer.disconnect();
+            // observer.disconnect();
           }
         });
       });

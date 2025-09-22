@@ -7,6 +7,16 @@
   .js-product-img {
     border-radius: 10px;
   }
+  .js-product-price {
+    font-size: 1.3em;
+  }
+  .t-store__card__price-currency {
+    font-size: 0.75em;
+  }
+  .t-store__card__price-currency {
+    // vertical-align: baseline;
+    margin-top: 10px;
+  }
   .t-store__card__imgwrapper {
     // Adjust layout for more taller images
     padding-bottom: 135%;

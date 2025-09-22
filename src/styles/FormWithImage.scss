@@ -1,10 +1,13 @@
 @use '../variables' as *;
 
 #allrecords .uc-FormWithImage {
-  // @include activeLink;
-  .t-container .t-col:nth-child(2) {
-    @media (width <= $mobileTreshold) {
-      margin-bottom: 60px;
+  .t-container  {
+    // @media (width <= $mobileTreshold) {}
+    .t-col:nth-child(1) {
+      margin-top: auto;
+    }
+    .t-col:nth-child(2) {
+      padding-bottom: 60px;
     }
   }
 }

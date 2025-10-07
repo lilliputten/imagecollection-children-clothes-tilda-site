@@ -15,20 +15,33 @@
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    a img {
-      border: 1px solid transparent;
+    .Variant {
+      border-radius: 7px;
+      box-sizing: content-box;
+      border: 2px solid transparent;
       transition: all var(--transitionTimeMs);
+      &.Current {
+        opacity: .5;
+        background-color: $primaryColor;
+        border-color: $primaryColor;
+      }
+      img {
+        background-color: #ccc;
+        border: 2px solid transparent;
+        transition: all var(--transitionTimeMs);
+        display: block;
+        height: 120px;
+        width: auto;
+        border-radius: 5px;
+        overflow: hidden;
+      }
     }
-    a:hover img {
-      border: 1px solid $primaryColor;
+    .Variant.Current img,
+    a.Variant:hover img {
+      border: 2px solid $primaryColor;
     }
-    img {
-      display: block;
-      height: 120px;
-      width: auto;
-      border-radius: 5px;
-      overflow: hidden;
-      background-color: #ccc;
+    .Variant.Current img {
+      background-color: $primaryColor;
     }
   }
 }

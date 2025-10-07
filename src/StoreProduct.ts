@@ -4,9 +4,9 @@ export function quoteHtmlAttr(str: string, preserveCR?: boolean) {
   const crValue = preserveCR ? '&#13;' : '\n';
   return (
     String(str) // Forces the conversion to string
-      .replace(/&/g, '&amp;') // This MUST be the 1st replacement
-      .replace(/'/g, '&apos;') // The 4 other predefined entities, required
-      .replace(/"/g, '&quot;')
+      // .replace(/&/g, '&amp;') // This MUST be the 1st replacement
+      // .replace(/'/g, '&apos;') // The 4 other predefined entities, required
+      // .replace(/"/g, '&quot;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       // You may add other replacements here for HTML only (but it's not
@@ -22,6 +22,7 @@ function processVariants(node: HTMLElement) {
   if (!contentNode) {
     return node;
   }
+  const currentHref = window.location.href;
   const contentText = contentNode.innerHTML.trim();
   const lines = contentText
     .replace(/<br\s*\/>/g, '<br>')
@@ -34,23 +35,32 @@ function processVariants(node: HTMLElement) {
     for (let idx = 0; idx < lines.length; idx += 3) {
       const titleStr = lines[idx];
       const imgStr = lines[idx + 1];
-      const urlStr = lines[idx + 2];
+      const urlStr = lines[idx + 2].replace(/^http:/, 'https:');
+      const isCurrent = currentHref.startsWith(urlStr);
       const img = document.createElement('img');
       img.setAttribute('src', imgStr);
       img.setAttribute('alt', titleStr);
-      const a = document.createElement('a');
-      a.setAttribute('href', urlStr);
-      a.setAttribute('title', titleStr);
-      a.append(img);
-      variants.append(a);
-      console.log('[StoreProduct:processVariants] item', {
-        titleStr,
-        imgStr,
-        urlStr,
-        img,
-        variants,
-        node,
-      });
+      const container = document.createElement(isCurrent ? 'span' : 'a');
+      container.classList.add('Variant');
+      if (!isCurrent) {
+        container.setAttribute('href', urlStr);
+      } else {
+        container.classList.add('Current');
+      }
+      container.setAttribute('title', titleStr);
+      container.append(img);
+      variants.append(container);
+      /* console.log('[StoreProduct:processVariants] item', {
+       *   titleStr,
+       *   imgStr,
+       *   urlStr,
+       *   isCurrent,
+       *   currentHref,
+       *   img,
+       *   variants,
+       *   node,
+       * });
+       */
     }
     return variants;
   } catch (err) {

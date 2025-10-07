@@ -1,0 +1,34 @@
+@use 'sass:color';
+
+@use '../variables' as *;
+
+#allrecords .js-store-product.js-product {
+  @include basicActiveLink;
+  .DetailsWrapper {
+    margin: 1em 0;
+    .t-descr {
+      color: #999;
+    }
+  }
+  .Variants {
+    margin: 1em 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    a img {
+      border: 1px solid transparent;
+      transition: all var(--transitionTimeMs);
+    }
+    a:hover img {
+      border: 1px solid $primaryColor;
+    }
+    img {
+      display: block;
+      height: 120px;
+      width: auto;
+      border-radius: 5px;
+      overflow: hidden;
+      background-color: #ccc;
+    }
+  }
+}

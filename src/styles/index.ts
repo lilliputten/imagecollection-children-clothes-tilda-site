@@ -10,3 +10,4 @@ import './StoreGrid.scss';
 import './SubPage.scss';
 import './FormWithImage.scss';
 import './Blog.scss';
+import './StoreProduct.scss';

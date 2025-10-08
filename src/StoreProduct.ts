@@ -50,17 +50,6 @@ function processVariants(node: HTMLElement) {
       container.setAttribute('title', titleStr);
       container.append(img);
       variants.append(container);
-      /* console.log('[StoreProduct:processVariants] item', {
-       *   titleStr,
-       *   imgStr,
-       *   urlStr,
-       *   isCurrent,
-       *   currentHref,
-       *   img,
-       *   variants,
-       *   node,
-       * });
-       */
     }
     return variants;
   } catch (err) {
@@ -77,7 +66,7 @@ function processVariants(node: HTMLElement) {
 }
 
 function createDetailsFromTabs(productNode: HTMLElement, rightColumn: HTMLElement) {
-  const wideColumn = productNode.querySelector<HTMLElement>('.js-store-tabs');
+  const tabsContainer = productNode.querySelector<HTMLElement>('.js-store-tabs');
   const tabs = productNode.querySelectorAll<HTMLElement>(
     '.t-store__tabs__controls .t-store__tabs__button',
   );
@@ -91,7 +80,7 @@ function createDetailsFromTabs(productNode: HTMLElement, rightColumn: HTMLElemen
       return;
     }
     const node = nodes[idx];
-    const targetContainer = rightColumn; // isVariants ? wideColumn : rightColumn;
+    const targetContainer = rightColumn; // isVariants ? tabsContainer : rightColumn;
     const newNode = isVariants ? processVariants(node) : node;
     if (isVariants) {
       // Just add the block to the appropriate column
@@ -106,24 +95,30 @@ function createDetailsFromTabs(productNode: HTMLElement, rightColumn: HTMLElemen
     } else {
       // Place a variants above the tab headers
       const wrapper = document.createElement('div');
-      const parent = wideColumn.parentNode;
+      const parent = tabsContainer.parentNode;
       wrapper.classList.add('DetailsWideWrapper', 't-col', 't-col_12');
       wrapper.append(newNode);
-      parent.insertBefore(wrapper, wideColumn);
+      parent.insertBefore(wrapper, tabsContainer);
     }
     node.remove();
     tab.remove();
     // tab.style.display = 'none';
   });
+  // Show initially hidden tabs wrapper (see styles)
+  tabsContainer.style.opacity = '1';
+  tabsContainer.style.pointerEvents = 'initial';
 }
 
 export function initStoreProduct() {
   const rootNode = document.querySelector<HTMLElement>('.t-rec > .t-store');
   const productNode = rootNode?.querySelector<HTMLElement>('.js-store-product.js-product');
   if (rootNode && productNode) {
-    //Only if product page has been found, else do nothing
+    // Only if product page has been found, else do nothing
     // const leftColumn = productNode.querySelector<HTMLElement>('.t-store__prod-popup__col-left');
     const rightColumn = productNode.querySelector<HTMLElement>('.t-store__prod-popup__col-right');
-    createDetailsFromTabs(productNode, rightColumn);
+    // Use a delay to provide a time gap to render the tabs
+    setTimeout(() => {
+      createDetailsFromTabs(productNode, rightColumn);
+    }, 500);
   }
 }

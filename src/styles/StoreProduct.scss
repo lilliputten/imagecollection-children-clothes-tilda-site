@@ -4,6 +4,11 @@
 
 #allrecords .js-store-product.js-product {
   @include basicActiveLink;
+  .js-store-tabs {
+    // Hide tabs at first
+    opacity: 0;
+    pointer-events: none;
+  }
   .DetailsWrapper {
     margin: 1em 0;
     .t-descr {

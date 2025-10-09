@@ -1,12 +1,13 @@
 /** @module Scripts root module
  *  @since 2025.09.12, 21:09
- *  @changed 2025.09.12, 21:09
+ *  @changed 2025.10.09, 17:50
  */
 
 import './project-info.scss';
 import './variables/variables-expose.scss';
 import './styles';
 
+import { initConfirmForms } from './ConfirmForm';
 import { isDebug } from './core/constants/isDebug';
 import { isDev } from './core/constants/isDev';
 import { initHero } from './Hero';
@@ -29,6 +30,7 @@ function initPage() {
   initHero();
   initSubPage();
   initStoreProduct();
+  initConfirmForms();
   // Forcibely update components' dimensions
   window.dispatchEvent(new Event('resize'));
 }

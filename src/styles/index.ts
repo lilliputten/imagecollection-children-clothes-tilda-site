@@ -11,3 +11,4 @@ import './SubPage.scss';
 import './FormWithImage.scss';
 import './Blog.scss';
 import './StoreProduct.scss';
+import './ConfirmForm.scss';

@@ -5,5 +5,5 @@
 
 # imagecollection-children-clothes-tilda-site
 
-- Version: 0.0.2
-- Last changes timestamp: 2025.10.08 10:27:12 +0300
+- Version: 0.0.3
+- Last changes timestamp: 2025.10.09 19:57:44 +0300

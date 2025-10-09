@@ -1,0 +1,7 @@
+@use '../variables' as *;
+
+#allrecords {
+  [class*='__form-bottom-text'] {
+    @include activeLink;
+  }
+}

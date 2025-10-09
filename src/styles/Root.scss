@@ -4,6 +4,11 @@ body {
   // padding-top: $NavHeaderTotalHeight;
 }
 
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 // Misc styles
 .opacity-50 {
   opacity: 0.5;

@@ -26,7 +26,7 @@
       border: 2px solid transparent;
       transition: all var(--transitionTimeMs);
       &.Current {
-        opacity: .5;
+        opacity: 0.5;
         background-color: $primaryColor;
         border-color: $primaryColor;
       }

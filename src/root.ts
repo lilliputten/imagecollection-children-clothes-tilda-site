@@ -1,6 +1,6 @@
 /** @module Scripts root module
  *  @since 2025.09.12, 21:09
- *  @changed 2025.10.09, 17:50
+ *  @changed 2025.12.10, 13:39
  */
 
 import './project-info.scss';
@@ -10,6 +10,7 @@ import './styles';
 import { initConfirmForms } from './ConfirmForm';
 import { isDebug } from './core/constants/isDebug';
 import { isDev } from './core/constants/isDev';
+import { initFooterSocials } from './FooterSocials';
 import { initHero } from './Hero';
 import { initStoreProduct } from './StoreProduct';
 import { initSubPage } from './SubPage';
@@ -31,6 +32,7 @@ function initPage() {
   initSubPage();
   initStoreProduct();
   initConfirmForms();
+  initFooterSocials();
   // Forcibely update components' dimensions
   window.dispatchEvent(new Event('resize'));
 }

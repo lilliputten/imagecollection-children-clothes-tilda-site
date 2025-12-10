@@ -23,7 +23,7 @@ if [ -z "$CONFIG_IMPORTED" ]; then
   VERSION_FILE="project-version.txt"
 
   # Misc generated files (see update-build-variables.sh)
-  PROJECT_INFO_FILE="public-uploads/project-info.txt"
+  PROJECT_INFO_FILE="public/project-info.txt"
   PROJECT_HASH_FILE="public/project-hash.txt"
   PROJECT_INFO_JSON_FILE="src/project-info.json"
   PROJECT_INFO_SCSS_FILE="src/project-info.scss"

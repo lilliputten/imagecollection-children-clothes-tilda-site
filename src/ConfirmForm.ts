@@ -33,6 +33,6 @@ export function initConfirmForms() {
   );
   console.log('[ConfirmForm:initConfirmForms]', {
     formBottomTextNodes,
-  })
+  });
   formBottomTextNodes.forEach(processForm);
 }

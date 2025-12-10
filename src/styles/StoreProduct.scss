@@ -49,4 +49,24 @@
       background-color: $primaryColor;
     }
   }
+  // Buttons
+  .t-store__prod-popup__btn-wrapper {
+    a[data-social-id] {
+      // border: 1px solid red;
+      display: inline-block;
+      // border: 0 none;
+      // text-align: center;
+      // white-space: nowrap;
+      vertical-align: middle;
+      // background-image: none;
+      user-select: none;
+      // box-sizing: border-box;
+      margin: 0 0.2em;
+      &,
+      & > svg {
+        width: 45px;
+        height: 45px;
+      }
+    }
+  }
 }

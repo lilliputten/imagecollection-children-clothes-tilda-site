@@ -31,8 +31,5 @@ export function initConfirmForms() {
   const formBottomTextNodes = document.querySelectorAll<HTMLDivElement>(
     '[class*="__form-bottom-text"]',
   );
-  console.log('[ConfirmForm:initConfirmForms]', {
-    formBottomTextNodes,
-  })
   formBottomTextNodes.forEach(processForm);
 }

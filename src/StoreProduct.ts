@@ -1,3 +1,6 @@
+import { createSvgFromDataUrl } from './helpers/createSvgFromDataUrl';
+import { socials } from './shared/socials';
+
 const variantsTitle = 'Варианты';
 
 export function quoteHtmlAttr(str: string, preserveCR?: boolean) {
@@ -109,16 +112,82 @@ function createDetailsFromTabs(productNode: HTMLElement, rightColumn: HTMLElemen
   tabsContainer.style.pointerEvents = 'initial';
 }
 
+const addToButtons = false;
+
+function prepareSocialLinks(parentNode: HTMLElement) {
+  const textContainer = parentNode.querySelector<HTMLElement>('.js-store-prod-all-text');
+  if (!textContainer) {
+    // eslint-disable-next-line no-console
+    console.warn('[StoreProduct:prepareSocialLinks] Not found text container');
+    return;
+  }
+  const buttonsContainer = parentNode.querySelector<HTMLElement>(
+    '.t-store__prod-popup__btn-wrapper',
+  );
+  if (!buttonsContainer) {
+    // eslint-disable-next-line no-console
+    console.warn('[StoreProduct:prepareSocialLinks] Not found buttons container');
+    return;
+  }
+  Object.entries(socials).forEach(([socialId, socialData]) => {
+    const { svgData, urlPrefixes, productTitle } = socialData;
+    const svgNode = createSvgFromDataUrl(svgData);
+    if (!svgNode) {
+      // eslint-disable-next-line no-console
+      console.error('[StoreProduct:prepareSocialLinks] Cannot create an svg node for', socialId);
+      debugger; // eslint-disable-line no-debugger
+      return;
+    }
+    svgNode.dataset.socialId = socialId;
+    // Find links in the text...
+    const cssSelector = urlPrefixes.map((url) => `a[href^="${url}"]`).join(', ');
+    const link = textContainer.querySelector<HTMLLinkElement>(cssSelector);
+    if (!link) {
+      // eslint-disable-next-line no-console
+      console.warn('[StoreProduct:prepareSocialLinks] Not found a target node for', socialId);
+      return;
+    }
+    // Replace the previous icon with the newly created
+    link.replaceChildren(svgNode);
+    // Set attributes
+    link.dataset.socialId = socialId;
+    link.setAttribute('target', '_blank');
+    if (productTitle) {
+      link.setAttribute('title', productTitle);
+    }
+    // Clone and add to the buttons container
+    if (addToButtons) {
+      const buttonLink = link.cloneNode(true) as HTMLLinkElement;
+      // Replace the previous icon with the newly created
+      link.replaceChildren(svgNode);
+      // Add to the buttons container
+      buttonsContainer.appendChild(buttonLink);
+    }
+  });
+}
+
 export function initStoreProduct() {
   const rootNode = document.querySelector<HTMLElement>('.t-rec > .t-store');
-  const productNode = rootNode?.querySelector<HTMLElement>('.js-store-product.js-product');
-  if (rootNode && productNode) {
-    // Only if product page has been found, else do nothing
-    // const leftColumn = productNode.querySelector<HTMLElement>('.t-store__prod-popup__col-left');
-    const rightColumn = productNode.querySelector<HTMLElement>('.t-store__prod-popup__col-right');
-    // Use a delay to provide a time gap to render the tabs
-    setTimeout(() => {
-      createDetailsFromTabs(productNode, rightColumn);
-    }, 500);
+  if (!rootNode) {
+    // eslint-disable-next-line no-console
+    console.warn('[StoreProduct] Not found the root node');
+    return;
   }
+  const productNode = rootNode?.querySelector<HTMLElement>('.js-store-product.js-product');
+  if (!productNode) {
+    // eslint-disable-next-line no-console
+    console.warn('[StoreProduct] Not found the product node');
+    return;
+  }
+  const rightColumn = productNode.querySelector<HTMLElement>('.t-store__prod-popup__col-right');
+  if (!rightColumn) {
+    // eslint-disable-next-line no-console
+    console.warn('[StoreProduct] Not found the product right column node');
+    return;
+  }
+  // Use a delay to provide a time gap to render the tabs
+  setTimeout(() => {
+    createDetailsFromTabs(productNode, rightColumn);
+    prepareSocialLinks(rightColumn);
+  }, 500);
 }

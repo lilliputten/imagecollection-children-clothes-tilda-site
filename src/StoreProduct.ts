@@ -69,7 +69,9 @@ function processVariants(node: HTMLElement) {
 }
 
 function createDetailsFromTabs(productNode: HTMLElement, rightColumn: HTMLElement) {
-  const tabsContainer = productNode.querySelector<HTMLElement>('.js-store-tabs');
+  const tabsContainer: HTMLElement | undefined = productNode.querySelector<HTMLElement | undefined>(
+    '.js-store-tabs',
+  );
   const tabs = productNode.querySelectorAll<HTMLElement>(
     '.t-store__tabs__controls .t-store__tabs__button',
   );
@@ -98,18 +100,22 @@ function createDetailsFromTabs(productNode: HTMLElement, rightColumn: HTMLElemen
     } else {
       // Place a variants above the tab headers
       const wrapper = document.createElement('div');
-      const parent = tabsContainer.parentNode;
       wrapper.classList.add('DetailsWideWrapper', 't-col', 't-col_12');
       wrapper.append(newNode);
-      parent.insertBefore(wrapper, tabsContainer);
+      if (tabsContainer) {
+        const parent = tabsContainer.parentNode;
+        parent.insertBefore(wrapper, tabsContainer);
+      }
     }
     node.remove();
     tab.remove();
     // tab.style.display = 'none';
   });
   // Show initially hidden tabs wrapper (see styles)
-  tabsContainer.style.opacity = '1';
-  tabsContainer.style.pointerEvents = 'initial';
+  if (tabsContainer) {
+    tabsContainer.style.opacity = '1';
+    tabsContainer.style.pointerEvents = 'initial';
+  }
 }
 
 const addToButtons = false;

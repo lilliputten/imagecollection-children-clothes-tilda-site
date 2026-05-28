@@ -32,3 +32,6 @@ $extraWideTreshold: 1400px;
 $wideTreshold: 1200px;
 $mobileTreshold: 980px;
 $smallTreshold: 660px;
+
+// Hover media constant, use as `@media #{$hoverMediaRules} { &:hover { ... } }`
+$hoverMediaRules: '(hover: hover) and (pointer: fine)';

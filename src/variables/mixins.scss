@@ -1,7 +1,11 @@
+@use './variables' as *;
+
 @mixin selfActiveLink {
   transition: all var(--transitionTimeMs);
-  &:hover {
-    opacity: 0.75;
+  @media #{$hoverMediaRules} {
+    &:hover {
+      opacity: 0.75;
+    }
   }
 }
 
@@ -16,8 +20,10 @@
   @include basicActiveLink;
   button,
   a {
-    &:hover {
-      text-decoration: underline !important;
+    @media #{$hoverMediaRules} {
+      &:hover {
+        text-decoration: underline !important;
+      }
     }
   }
 }

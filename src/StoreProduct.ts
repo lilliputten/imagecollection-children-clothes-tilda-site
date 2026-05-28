@@ -57,7 +57,7 @@ function processVariants(node: HTMLElement) {
     return variants;
   } catch (err) {
     // eslint-disable-next-line no-console
-    console.error('[StoreProduct:processVariants]', err.message, {
+    console.error('[StoreProduct:processVariants]', (err as Error).message, {
       err,
       lines,
       contentText,
@@ -69,9 +69,7 @@ function processVariants(node: HTMLElement) {
 }
 
 function createDetailsFromTabs(productNode: HTMLElement, rightColumn: HTMLElement) {
-  const tabsContainer: HTMLElement | undefined = productNode.querySelector<HTMLElement | undefined>(
-    '.js-store-tabs',
-  );
+  const tabsContainer = productNode.querySelector('.js-store-tabs') as HTMLElement | undefined;
   const tabs = productNode.querySelectorAll<HTMLElement>(
     '.t-store__tabs__controls .t-store__tabs__button',
   );
@@ -104,7 +102,7 @@ function createDetailsFromTabs(productNode: HTMLElement, rightColumn: HTMLElemen
       wrapper.append(newNode);
       if (tabsContainer) {
         const parent = tabsContainer.parentNode;
-        parent.insertBefore(wrapper, tabsContainer);
+        parent?.insertBefore(wrapper, tabsContainer);
       }
     }
     node.remove();

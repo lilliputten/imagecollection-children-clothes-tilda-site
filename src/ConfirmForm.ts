@@ -18,11 +18,11 @@ export function processForm(formBottomText: HTMLDivElement) {
   if (initialChecked) {
     checkboxNode.setAttribute('checked', 'true');
   } else {
-    buttonNode.classList.toggle('disabled', true);
+    buttonNode?.classList.toggle('disabled', true);
   }
   checkboxNode.addEventListener('change', () => {
     const checked = checkboxNode.checked;
-    buttonNode.classList.toggle('disabled', !checked);
+    buttonNode?.classList.toggle('disabled', !checked);
   });
   formBottomText.prepend(checkboxNode);
 }

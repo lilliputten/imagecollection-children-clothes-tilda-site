@@ -5,14 +5,6 @@ function initHeroCover(node: HTMLDivElement) {
   const bgUrlStr = contentCoverBg && `url("${contentCoverBg}")`;
   // Restore the original background image
   if (bgUrlStr && bgUrlStr !== backgroundImage) {
-    /* console.log('[Hero:initHeroCover] Restoring the original banner image', {
-     *   bgUrlStr,
-     *   // contentCoverBg,
-     *   backgroundImage,
-     *   dataset,
-     *   node,
-     * });
-     */
     requestAnimationFrame(() => (node.style.backgroundImage = bgUrlStr));
   }
 }
@@ -39,7 +31,7 @@ export function initHero() {
     if (node.classList.contains('loaded')) {
       initHeroCover(node);
     } else {
-      node.classList.toggle('loaded', true);
+      // node.classList.toggle('loaded', true); // ???
       const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
           if (checkMutation(mutation)) {

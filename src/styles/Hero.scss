@@ -116,11 +116,11 @@
 
   // Background style
   .t-slds__items-wrapper {
-    // background: linear-gradient(115deg, $lightBlueColor, rgba(var(--lightBlueRGB) / 20%));
+    // background: linear-gradient(115deg, $themeBlueLightColor, rgba(var(--lightBlueRGB) / 20%));
   }
   .t-slds__item {
     transition: background 250ms;
-    background: linear-gradient(115deg, $lightBlueColor, rgba(var(--lightBlueRGB) / 20%));
+    background: linear-gradient(115deg, $themeBlueLightColor, rgba(var(--lightBlueRGB) / 20%));
     &:nth-child(2) {
       background: linear-gradient(217deg, rgba(255 0 0 / 0.2), transparent 70%),
         linear-gradient(127deg, rgba(var(--lightBlueRGB) / 50%), transparent 70%),
@@ -128,13 +128,13 @@
     }
     &:nth-child(3) {
       background: linear-gradient(127deg, rgba(255 0 0 / 0.1), transparent 70%),
-        linear-gradient(217deg, $lightBlueColor, transparent 70%),
+        linear-gradient(217deg, $themeBlueLightColor, transparent 70%),
         linear-gradient(90deg, rgba(0 0 255 / 0.2), transparent 70%); // r-bot
     }
     &:nth-child(4) {
       background: linear-gradient(90deg, rgba(255 0 0 / 0.2), transparent 70%),
         linear-gradient(217deg, rgba(0 0 255 / 0.2), transparent 70%),
-        linear-gradient(127deg, $lightBlueColor, transparent 70%); // r-bot
+        linear-gradient(127deg, $themeBlueLightColor, transparent 70%); // r-bot
     }
   }
 
@@ -142,7 +142,7 @@
   .t-slds__arrow {
     transition: all var(--transitionTimeMs);
     &:hover {
-      background-color: $themeOrangeColor !important;
+      background-color: $themeBlueColor !important;
       opacity: 1;
     }
   }
@@ -151,8 +151,8 @@
       transition: all var(--transitionTimeMs);
     }
     &:hover button {
-      background-color: $themeOrangeColor !important;
-      border-color: $themeOrangeColor !important;
+      background-color: $themeBlueColor !important;
+      border-color: $themeBlueColor !important;
       opacity: 1;
     }
   }

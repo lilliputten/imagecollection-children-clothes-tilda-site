@@ -22,7 +22,7 @@
   .t-btn {
     transition: all var(--transitionTimeMs);
     &:hover {
-      background-color: $themeOrangeColor !important;
+      background-color: $themeBlueColor !important;
       opacity: 1;
     }
   }

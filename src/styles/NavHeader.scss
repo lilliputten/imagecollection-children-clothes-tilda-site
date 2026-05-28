@@ -4,10 +4,10 @@
   // Links...
   @include basicActiveLink;
   a:hover {
-    color: var(--themeOrangeColor);
+    color: var(--themeBlueColor);
   }
   button.t-menuburger:hover span {
-    background-color: var(--themeOrangeColor) !important;
+    background-color: var(--themeBlueColor) !important;
   }
   .t-menu__list {
     a:hover {

@@ -1,10 +1,14 @@
-$primaryColor: #f73;
-$themeOrangeColor: $primaryColor;
+$themeBlueDarkColor: #19e;
+$themeBlueColor: #38d;
+$themeBlueLightColor: #bde;
+$themeBlueLightestColor: #eff;
+$themeGreenColor: #7a7;
+$themeGreenLightestColor: #efe;
+
+$primaryColor: $themeBlueColor;
+
 $themeGrayColor: #333;
-
 $themeBgColor: $themeGrayColor;
-
-$lightBlueColor: #bbdde6;
 
 $socialIconSize: 32px;
 $socialIconSmallSize: 22px;
@@ -15,15 +19,15 @@ $transitionTimeMs: 250ms;
 $animationTimeMs: 500ms;
 $disappearTimeMs: 1000ms;
 
-// NavHeader
-
-$navbarHeight: 72px;
-$topMenuHeight: 72px;
+// // NavHeader
+//
+// $navbarHeight: 72px;
+// $topMenuHeight: 72px;
 
 // Fonts
 
-$defaultFont: 'Inter', Arial, sans-serif;
-$titleFont: 'DrukTextWideTT', Arial, sans-serif;
+$defaultFont: Montserrat, Arial, sans-serif;
+$titleFont: $defaultFont; // Montserrat, Arial, sans-serif;
 $defaultFontSize: 16px;
 
 // Adaptive layouts...

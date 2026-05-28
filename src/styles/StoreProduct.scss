@@ -24,7 +24,7 @@
       border-radius: 7px;
       box-sizing: content-box;
       border: 2px solid transparent;
-      transition: all var(--transitionTimeMs);
+      transition: all $transitionTimeMs;
       &.Current {
         opacity: 0.5;
         background-color: $primaryColor;
@@ -33,7 +33,7 @@
       img {
         background-color: #ccc;
         border: 2px solid transparent;
-        transition: all var(--transitionTimeMs);
+        transition: all $transitionTimeMs;
         display: block;
         height: 120px;
         width: auto;

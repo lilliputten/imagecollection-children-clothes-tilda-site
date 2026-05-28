@@ -140,19 +140,19 @@
 
   // Interactive navigation
   .t-slds__arrow {
-    transition: all var(--transitionTimeMs);
+    transition: all $transitionTimeMs;
     &:hover {
-      background-color: $themeBlueColor !important;
+      background-color: $themeOrangeColor !important;
       opacity: 1;
     }
   }
   .t-slds__bullet {
     button {
-      transition: all var(--transitionTimeMs);
+      transition: all $transitionTimeMs;
     }
     &:hover button {
-      background-color: $themeBlueColor !important;
-      border-color: $themeBlueColor !important;
+      background-color: $themeOrangeColor !important;
+      border-color: $themeOrangeColor !important;
       opacity: 1;
     }
   }

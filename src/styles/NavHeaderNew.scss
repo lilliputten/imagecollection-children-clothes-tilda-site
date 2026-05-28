@@ -1,0 +1,94 @@
+@use 'sass:color';
+
+@use '../variables' as *;
+
+/*! NavHeaderNew */
+
+.uc-NavHeaderNew {
+  // Link hovers...
+  @include basicActiveLink;
+  // Background color
+  #allrecords & .t-menu-base {
+    // TODO: OVER_HERO: To hide the background if it's over the hero banner
+    // background-color: color.change($themeBlueColor, $alpha: 0) !important;
+  }
+  // Adjust social icon sizes
+  .t-sociallinks {
+    a,
+    img {
+      width: $socialIconSize !important;
+      height: $socialIconSize !important;
+    }
+  }
+  // Nenu items...
+  .t-menu__list {
+    gap: 0.5em;
+  }
+  #allrecords & a.t-menu__link-item {
+    transition: all $transitionTimeMs;
+    padding: 0.4em 0.8em;
+    border-radius: 20px;
+    background-color: color.change($themeBlueColor, $alpha: 0.5);
+    @media (width < $mobileTreshold) {
+      // TODO: OVER_HERO: Use it also for the opaque background
+      background-color: color.adjust($themeBlueColor, $lightness: -10%);
+    }
+  }
+  @media #{$hoverMediaRules} {
+    a:hover {
+      opacity: $hoverOpacity;
+    }
+    button.t-menuburger:hover span {
+      opacity: $hoverOpacity;
+    }
+    #allrecords & .t-menu__list {
+      // The real selector: .t-menu__link-item:not(.t-active):not(.tooltipstered):hover
+      a.t-menu__link-item:hover {
+        color: #fff !important;
+        opacity: $hoverOpacity;
+        background-color: $themeBlueColor;
+        @media (width < $mobileTreshold) {
+          // TODO: OVER_HERO: Use it also for the opaque background
+          background-color: color.adjust($themeBlueColor, $lightness: -20%);
+        }
+      }
+    }
+  }
+  // Narrow (mobile) screens...
+  @media (width < $mobileTreshold) {
+    .tmenu-mobile__container {
+      gap: 1em;
+    }
+    // Left (logo) section
+    .t-menu-base__logowrapper {
+      #allrecords & img {
+        max-width: 100%;
+      }
+    }
+  }
+  // Wide (desktop) screens...
+  @media (width >= $mobileTreshold) {
+    // Menu container
+    .t-menu-base__maincontainer {
+      // border: 1px solid red; // DEBUG
+    }
+    // Left (logo) section
+    .t-menu-base__logowrapper {
+      max-width: none !important;
+      flex: unset !important;
+    }
+    // Middle menu wrapper
+    #allrecords & .t-menu-base__leftwrapper {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      .t-menu-base__list {
+        flex-wrap: nowrap;
+      }
+    }
+    // Right social icons wrapper
+    .t-menu-base__rightwrapper {
+      // border: 1px solid yellow; // DEBUG
+    }
+  }
+}

@@ -4,7 +4,7 @@
   // @include activeLink;
   .t490__wrappercenter {
     * {
-      transition: all var(--transitionTimeMs);
+      transition: all $transitionTimeMs;
     }
     &:hover {
       * {

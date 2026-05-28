@@ -3,15 +3,17 @@
 #allrecords .uc-NavHeader {
   // Links...
   @include basicActiveLink;
-  a:hover {
-    color: var(--themeBlueColor);
-  }
-  button.t-menuburger:hover span {
-    background-color: var(--themeBlueColor) !important;
-  }
-  .t-menu__list {
+  @media #{$hoverMediaRules} {
     a:hover {
-      opacity: 1;
+      color: $themeOrangeColor;
+    }
+    button.t-menuburger:hover span {
+      background-color: $themeOrangeColor !important;
+    }
+    .t-menu__list {
+      a:hover {
+        opacity: 1;
+      }
     }
   }
 

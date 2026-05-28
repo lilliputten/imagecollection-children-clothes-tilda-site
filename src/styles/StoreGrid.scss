@@ -20,9 +20,9 @@
     padding-bottom: 135%;
   }
   .t-btn {
-    transition: all var(--transitionTimeMs);
+    transition: all $transitionTimeMs;
     &:hover {
-      background-color: $themeBlueColor !important;
+      background-color: $themeOrangeColor !important;
       opacity: 1;
     }
   }

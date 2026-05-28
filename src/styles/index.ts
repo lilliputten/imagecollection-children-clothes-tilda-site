@@ -1,6 +1,7 @@
 import './Root.scss';
 import './Hero.scss';
 import './NavHeader.scss';
+import './NavHeaderNew.scss';
 import './FooterContacts.scss';
 import './FooterCredits.scss';
 import './FooterLogo.scss';

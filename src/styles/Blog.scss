@@ -5,7 +5,7 @@
   .t-feed__col-grid__post-wrapper {
     border-radius: 10px;
     overflow: hidden;
-    transition: all var(--transitionTimeMs);
+    transition: all $transitionTimeMs;
     &:hover {
       opacity: 0.85;
     }

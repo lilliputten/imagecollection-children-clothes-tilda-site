@@ -4,10 +4,16 @@
 
 // TODO: Fix an initial render bug on screen widths ~620-780px
 
+/*! HeroNew (OLD) */
+
 #allrecords .uc-Hero {
   // position: relative;
 
   // @include activeLink;
+
+  #allrecords & .t-slds__container {
+    border-radius: 0;
+  }
 
   // Add padding for NavHeader
   $navHeaderTopPadding: 90px;

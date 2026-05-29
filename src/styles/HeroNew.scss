@@ -1,0 +1,83 @@
+@use '../variables' as *;
+
+/*! HeroNew */
+
+.uc-HeroNew {
+  // border: 1px solid red; // DEBUG
+  #allrecords & .t-slds__container {
+    border-radius: 0;
+  }
+  // Interactive navigation
+  .t-slds__bullet/*:not(.t-slds__bullet_active)*/,
+  .t-slds__arrow {
+    transition: all $transitionTimeMs;
+    @media #{$hoverMediaRules} {
+      opacity: $hoverOpacity;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  // Adjust content...
+  $treshold: $wideTreshold;
+  // Narrow screens: vertical layout
+  @media (width < $treshold) {
+    .t-cover__wrapper {
+      vertical-align: bottom;
+    }
+    // // Adjust background carrier (upscale move top)
+    // .t-cover__carrier {
+    //   background-position: 50% 100%;
+    //   background-size: auto 120%;
+    // }
+  }
+  // Wide screens: horizontal layout
+  @media (width >= $treshold) {
+    .t-cover__wrapper {
+      // border: 1px solid red; // DEBUG
+    }
+    .t734__wrapper {
+      margin-left: 20px;
+    }
+    .t734__textwrapper {
+      text-align: left;
+      width: 28em;
+      max-width: 100%;
+    }
+    // Adjust background carrier (upscale and move right, to make a space for the text at left)
+    .t-cover__carrier {
+      background-position: 0% 50%;
+      background-size: 125%;
+    }
+  }
+  // // Adjust banner size...
+  // @mixin setHeight($height) {
+  //   .t-slds__items-wrapper,
+  //   .t-cover__wrapper,
+  //   .t734__table,
+  //   .t-cover .t-cover__carrier,
+  //   .t-cover {
+  //     height: $height !important;
+  //   }
+  // }
+  // // Size: Default
+  // & {
+  //   @include setHeight(640px);
+  // }
+  // // Size <= 1400
+  // @media (width <= $extraWideTreshold) {
+  //   @include setHeight(520px);
+  // }
+  // // Size <= 1200
+  // @media (width <= $wideTreshold) {
+  //   @include setHeight(400px);
+  // }
+  // // Size <= 980
+  // @media (width <= $mobileTreshold) {
+  //   @include setHeight(320px);
+  // }
+  // // Size <= 660
+  // @media (width <= $smallTreshold) {
+  //   @include setHeight(480px);
+  // }
+}

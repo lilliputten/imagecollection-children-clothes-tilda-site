@@ -1,5 +1,6 @@
 import './Root.scss';
 import './Hero.scss';
+import './HeroNew.scss';
 import './NavHeader.scss';
 import './NavHeaderNew.scss';
 import './FooterContacts.scss';

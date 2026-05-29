@@ -11,9 +11,23 @@
   .t-menu-base {
     transition: all $transitionTimeMs;
   }
-  #allrecords &.onHero .t-menu-base {
+  #allrecords & .t-menu-base__maincontainer {
+    background-color: transparent !important;
+  }
+  #allrecords & .tmenu-mobile:not(.tmenu-mobile_opened),
+  #allrecords & .t-menu-base:not(.t-menu-base__burgermenu_opened) {
     // NOTE: OVER_HERO: Hide the background if it's over the hero banner
     background-color: color.change($themeBlueColor, $alpha: 0) !important;
+    backdrop-filter: none;
+  }
+  #allrecords &:not(.onHero) .tmenu-mobile,
+  #allrecords & .t-menu-base__burgermenu_opened,
+  #allrecords &:not(.onHero) .t-menu-base {
+    background-color: color.change($themeBlueColor, $alpha: 0.7) !important;
+    backdrop-filter: blur(10px);
+  }
+  #allrecords & .tmenu-mobile_opened .tmenu-mobile__container {
+    background-color: $themeBlueColor !important;
   }
   // Adjust social icon sizes
   .t-sociallinks {
@@ -32,15 +46,6 @@
     padding: 0.4em 0.8em;
     border-radius: 20px;
     background-color: color.change($themeBlueColor, $alpha: 0.5);
-    @media (width < $mobileTreshold) {
-      // TODO: OVER_HERO: Use it also for the opaque background
-      background-color: color.adjust($themeBlueColor, $lightness: -5%);
-    }
-  }
-  @media (width >= $mobileTreshold) {
-    #allrecords &:not(.onHero) a.t-menu__link-item {
-      background-color: color.adjust($themeBlueColor, $lightness: -5%);
-    }
   }
   @media #{$hoverMediaRules} {
     a:hover {
@@ -52,15 +57,13 @@
     // The real selector: .t-menu__link-item:not(.t-active):not(.tooltipstered):hover
     #allrecords & .t-menu__list a.t-menu__link-item:hover {
       color: #fff !important;
-      opacity: 1; // $hoverOpacity;
+      opacity: 1;
       background-color: $themeBlueColor;
-      @media (width < $mobileTreshold) {
-        // NOTE: OVER_HERO: Use it also for the opaque background
-        background-color: color.adjust($themeBlueColor, $lightness: -10%);
-      }
     }
-    #allrecords &:not(.onHero) .t-menu__list a.t-menu__link-item:hover {
-      background-color: color.adjust($themeBlueColor, $lightness: -10%);
+  }
+  @media (width >= $wideTreshold) {
+    .t-menu-base__maincontainer {
+      padding: 0;
     }
   }
   // Narrow (mobile) screens...

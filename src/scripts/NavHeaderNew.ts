@@ -8,23 +8,25 @@ export function initNavHeaderNew() {
     return;
   }
 
-  /*
-   * let heroObserver: IntersectionObserver | undefined;
-   * if (heroObserver) {
-   *   heroObserver.disconnect();
-   *   heroObserver = undefined;
-   * }
-   */
-
   if (heroNode) {
-    const heroObserver = new IntersectionObserver(
-      ([entry]) => {
-        const isHeroOnScreen = entry.isIntersecting;
-        navHeaderNode.classList.toggle('onHero', isHeroOnScreen);
-      },
-      { threshold: 0 },
-    );
-    heroObserver.observe(heroNode);
+    /* // Using intersection observer...
+     * const heroObserver = new IntersectionObserver(
+     *   ([entry]) => {
+     *     const isOnHero = entry.isIntersecting;
+     *     navHeaderNode.classList.toggle('onHero', isOnHero);
+     *   },
+     *   { threshold: 0 },
+     * );
+     * heroObserver.observe(heroNode);
+     */
+    // Using scroll event...
+    const handleScroll = (_event?: Event): void => {
+      const scrollY: number = window.scrollY;
+      const isOnHero = scrollY <= 100;
+      navHeaderNode.classList.toggle('onHero', isOnHero);
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
   } else {
     navHeaderNode.classList.toggle('onHero', false);
   }

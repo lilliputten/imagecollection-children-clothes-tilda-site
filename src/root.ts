@@ -12,6 +12,7 @@ import { initConfirmForms } from './ConfirmForm';
 // import { isDev } from './core/constants/isDev';
 import { initFooterSocials } from './FooterSocials';
 import { initHero } from './Hero';
+import { initNavHeaderNew } from './scripts/NavHeaderNew';
 import { initStoreProduct } from './StoreProduct';
 import { initSubPage } from './SubPage';
 
@@ -30,6 +31,7 @@ function initPage() {
   initStoreProduct();
   initConfirmForms();
   initFooterSocials();
+  initNavHeaderNew();
   // Forcibely update components' dimensions
   window.dispatchEvent(new Event('resize'));
 }

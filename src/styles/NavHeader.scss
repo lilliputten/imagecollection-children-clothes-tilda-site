@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 @use '../variables' as *;
 
 #allrecords .uc-NavHeader {
@@ -26,7 +28,7 @@
       width: auto;
     }
     .t228__maincontainer {
-      background-color: rgba(var(--themeBgRGB) / 80%);
+      background-color: color.change($themeBgColor, $alpha: 0.8); // rgba(var(--themeBgRGB) / 80%);
       backdrop-filter: blur(5px);
       border-radius: 10px;
       $hPadding: 20px;
@@ -40,10 +42,10 @@
   }
   @media (width <= $mobileTreshold) {
     .tmenu-mobile {
-      background-color: rgba(var(--themeBgRGB) / 100%);
+      background-color: $themeBgColor; // rgba(var(--themeBgRGB) / 100%);
     }
     .t228__maincontainer {
-      background-color: rgba(var(--themeBgRGB) / 90%);
+      background-color: color.change($themeBgColor, $alpha: 0.9); // rgba(var(--themeBgRGB) / 90%);
     }
   }
   @media (width <= 450px) {

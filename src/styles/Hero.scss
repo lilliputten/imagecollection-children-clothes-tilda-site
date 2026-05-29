@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 @use '../variables' as *;
 
 // TODO: Fix an initial render bug on screen widths ~620-780px
@@ -114,16 +116,16 @@
     @include setTextSize(0.4);
   }
 
-  // Background style
-  .t-slds__items-wrapper {
-    // background: linear-gradient(115deg, $themeBlueLightColor, rgba(var(--lightBlueRGB) / 20%));
-  }
   .t-slds__item {
     transition: background 250ms;
-    background: linear-gradient(115deg, $themeBlueLightColor, rgba(var(--lightBlueRGB) / 20%));
+    background: linear-gradient(
+      115deg,
+      $themeBlueLightColor,
+      color.change($themeBlueLightColor, $alpha: 0.2)
+    );
     &:nth-child(2) {
       background: linear-gradient(217deg, rgba(255 0 0 / 0.2), transparent 70%),
-        linear-gradient(127deg, rgba(var(--lightBlueRGB) / 50%), transparent 70%),
+        linear-gradient(127deg, color.change($themeBlueLightColor, $alpha: 0.5), transparent 70%),
         linear-gradient(90deg, rgba(0 0 255 / 0.2), transparent 70%); // r-bot
     }
     &:nth-child(3) {

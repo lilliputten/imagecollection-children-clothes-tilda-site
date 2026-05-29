@@ -8,9 +8,12 @@
   // Link hovers...
   @include basicActiveLink;
   // Background color
-  #allrecords & .t-menu-base {
-    // TODO: OVER_HERO: To hide the background if it's over the hero banner
-    // background-color: color.change($themeBlueColor, $alpha: 0) !important;
+  .t-menu-base {
+    transition: all $transitionTimeMs;
+  }
+  #allrecords &.onHero .t-menu-base {
+    // NOTE: OVER_HERO: Hide the background if it's over the hero banner
+    background-color: color.change($themeBlueColor, $alpha: 0) !important;
   }
   // Adjust social icon sizes
   .t-sociallinks {
@@ -31,7 +34,12 @@
     background-color: color.change($themeBlueColor, $alpha: 0.5);
     @media (width < $mobileTreshold) {
       // TODO: OVER_HERO: Use it also for the opaque background
-      background-color: color.adjust($themeBlueColor, $lightness: -10%);
+      background-color: color.adjust($themeBlueColor, $lightness: -5%);
+    }
+  }
+  @media (width >= $mobileTreshold) {
+    #allrecords &:not(.onHero) a.t-menu__link-item {
+      background-color: color.adjust($themeBlueColor, $lightness: -5%);
     }
   }
   @media #{$hoverMediaRules} {
@@ -41,17 +49,18 @@
     button.t-menuburger:hover span {
       opacity: $hoverOpacity;
     }
-    #allrecords & .t-menu__list {
-      // The real selector: .t-menu__link-item:not(.t-active):not(.tooltipstered):hover
-      a.t-menu__link-item:hover {
-        color: #fff !important;
-        opacity: $hoverOpacity;
-        background-color: $themeBlueColor;
-        @media (width < $mobileTreshold) {
-          // TODO: OVER_HERO: Use it also for the opaque background
-          background-color: color.adjust($themeBlueColor, $lightness: -20%);
-        }
+    // The real selector: .t-menu__link-item:not(.t-active):not(.tooltipstered):hover
+    #allrecords & .t-menu__list a.t-menu__link-item:hover {
+      color: #fff !important;
+      opacity: 1; // $hoverOpacity;
+      background-color: $themeBlueColor;
+      @media (width < $mobileTreshold) {
+        // NOTE: OVER_HERO: Use it also for the opaque background
+        background-color: color.adjust($themeBlueColor, $lightness: -10%);
       }
+    }
+    #allrecords &:not(.onHero) .t-menu__list a.t-menu__link-item:hover {
+      background-color: color.adjust($themeBlueColor, $lightness: -10%);
     }
   }
   // Narrow (mobile) screens...

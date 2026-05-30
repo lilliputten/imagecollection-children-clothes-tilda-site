@@ -9,6 +9,7 @@ import './styles';
 
 import { initConfirmForms } from './scripts/ConfirmForm';
 import { initNavHeaderNew } from './scripts/NavHeaderNew';
+import { initShopIcons } from './scripts/ShopIcons';
 
 // import { initHero } from './scripts/Hero';
 // import { initStoreProduct } from './scripts/StoreProduct';
@@ -29,6 +30,7 @@ function initPage() {
   // initStoreProduct();
   initConfirmForms();
   initNavHeaderNew();
+  initShopIcons();
   // Forcibely update components' dimensions
   window.dispatchEvent(new Event('resize'));
 }

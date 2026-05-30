@@ -1,0 +1,25 @@
+@use 'sass:color';
+
+@use '../variables' as *;
+
+/*! ShopIcons */
+
+#t-footer {
+  .t706__carticon-imgwrap,
+  .t1002__wishlisticon-imgwrap {
+    // @include selfActiveLink;
+    transition: all $transitionTimeMs;
+    background-color: color.change(#fff, $alpha: 0.2);
+    @media #{$hoverMediaRules} {
+      &:hover {
+        background-color: color.change($themeBlueColor, $alpha: 0.3);
+      }
+    }
+  }
+  &.with-cart {
+    .t1002__wishlisticon_showed {
+      // Move the wishlist icon left if there already is the cart icon
+      right: 100px !important;
+    }
+  }
+}

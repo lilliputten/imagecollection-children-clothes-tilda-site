@@ -1,5 +1,5 @@
-import { createSvgFromDataUrl } from './helpers/createSvgFromDataUrl';
-import { socials } from './shared/socials';
+import { createSvgFromDataUrl } from '../helpers/createSvgFromDataUrl';
+import { socials } from '../shared/socials';
 
 const variantsTitle = 'Варианты';
 

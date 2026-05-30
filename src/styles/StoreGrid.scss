@@ -1,29 +1,31 @@
+@use 'sass:color';
+
 @use '../variables' as *;
 
-#allrecords .uc-StoreGrid {
+/*! StoreGrid */
+
+.uc-StoreGrid {
   @include basicActiveLink;
   // @include activeLink;
-  // border: 1px solid purple; // DEBUG
   .js-product-img {
     border-radius: 10px;
+    border: 1px solid color.change(#000, $alpha: 0.1);
+    overflow: hidden;
+    width: 100%;
   }
   .js-product-price {
     font-size: 1.3em;
   }
   .t-store__card__price-currency {
     font-size: 0.75em;
-    // vertical-align: baseline;
     margin-top: 10px;
   }
   .t-store__card__imgwrapper {
     // Adjust layout for more taller images
     padding-bottom: 135%;
   }
-  .t-btn {
-    transition: all $transitionTimeMs;
-    &:hover {
-      background-color: $themeOrangeColor !important;
-      opacity: 1;
-    }
+  // Add to favorites button
+  .t1002__addBtn {
+    background-color: color.change(#fff, $alpha: 0.5);
   }
 }

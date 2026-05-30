@@ -10,6 +10,7 @@ import './styles';
 import { initConfirmForms } from './scripts/ConfirmForm';
 import { initNavHeaderNew } from './scripts/NavHeaderNew';
 import { initShopIcons } from './scripts/ShopIcons';
+import { initStoreProduct } from './scripts/StoreProduct';
 
 // import { initHero } from './scripts/Hero';
 // import { initStoreProduct } from './scripts/StoreProduct';
@@ -27,7 +28,7 @@ function initPage() {
   // Start subcomponents...
   // initHero();
   // initSubPage();
-  // initStoreProduct();
+  initStoreProduct();
   initConfirmForms();
   initNavHeaderNew();
   initShopIcons();

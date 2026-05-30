@@ -148,7 +148,9 @@ function prepareSocialLinks(parentNode: HTMLElement) {
     const link = textContainer.querySelector<HTMLLinkElement>(cssSelector);
     if (!link) {
       // eslint-disable-next-line no-console
-      console.warn('[StoreProduct:prepareSocialLinks] Not found a target node for', socialId);
+      console.warn('[StoreProduct:prepareSocialLinks] Not found a target node for', socialId, {
+        textContainer,
+      });
       return;
     }
     // Replace the previous icon with the newly created

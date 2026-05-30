@@ -4,7 +4,7 @@
 
 /*! ShopIcons */
 
-#t-footer {
+#allrecords {
   .t706__carticon-imgwrap,
   .t1002__wishlisticon-imgwrap {
     // @include selfActiveLink;
@@ -16,9 +16,9 @@
       }
     }
   }
-  &.with-cart {
-    .t1002__wishlisticon_showed {
-      // Move the wishlist icon left if there already is the cart icon
+  &.with-wishlist {
+    .t706__carticon {
+      // Move one of the icons a bit left if there already is the another icon, to provide space for it
       right: 100px !important;
     }
   }

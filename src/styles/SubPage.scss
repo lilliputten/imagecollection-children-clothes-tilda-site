@@ -20,19 +20,19 @@
         @media (width > $mobileTreshold) {
           justify-content: flex-end;
         }
-        .t-btn {
-          border-radius: 5px;
-          // border: 1px solid #333 !important;
-          transition: all $transitionTimeMs;
-          background-color: $themeBgColor;
-          color: #fff;
-          padding: 0.5em 2em;
-          &:hover {
-            background-color: $themeOrangeColor;
-            opacity: 1;
-            // color: #fff;
-          }
-        }
+        // .t-btn {
+        //   border-radius: 5px;
+        //   // border: 1px solid #333 !important;
+        //   transition: all $transitionTimeMs;
+        //   background-color: $themeBgColor;
+        //   color: #fff;
+        //   padding: 0.5em 2em;
+        //   &:hover {
+        //     background-color: $themeOrangeColor;
+        //     opacity: 1;
+        //     // color: #fff;
+        //   }
+        // }
       }
     }
   }
@@ -47,19 +47,21 @@
     @include basicActiveLink;
     // border: 1px solid green; // DEBUG
     .t-slds__arrow {
-      transition: all $transitionTimeMs;
-      &:hover {
-        background-color: $themeOrangeColor !important;
-        opacity: 1;
+      @media #{$hoverMediaRules} {
+        transition: all $transitionTimeMs;
+        &:hover {
+          background-color: $themeBlueLightColor !important;
+          opacity: 1;
+        }
       }
     }
-    .t-btn {
-      transition: all $transitionTimeMs;
-      &:hover {
-        background-color: $themeOrangeColor !important;
-        opacity: 1;
-      }
-    }
+    // .t-btn {
+    //   transition: all $transitionTimeMs;
+    //   &:hover {
+    //     background-color: $themeOrangeColor !important;
+    //     opacity: 1;
+    //   }
+    // }
     // Product price
     .js-product-price {
       font-size: 2em;
@@ -95,12 +97,15 @@
 
 // Carousel popup controls
 .t-zoomer__wrapper {
+  .t-zoomer__ui-item,
   .t-zoomer__scale,
   .t-zoomer__close {
-    transition: all $transitionTimeMs;
-    &:hover {
-      background-color: $themeOrangeColor !important;
-      opacity: 1;
+    @media #{$hoverMediaRules} {
+      transition: all $transitionTimeMs;
+      &:hover {
+        background-color: $themeBlueLightColor !important;
+        opacity: 1;
+      }
     }
   }
   .t-carousel__zoomer__control {
@@ -109,11 +114,13 @@
     .t-carousel__zoomer__arrow__wrapper:before {
       transition: all $transitionTimeMs;
     }
-    &:hover {
-      opacity: 1;
-      .t-carousel__zoomer__arrow__wrapper {
-        &:before {
-          background-color: $themeOrangeColor !important;
+    @media #{$hoverMediaRules} {
+      &:hover {
+        opacity: 1;
+        .t-carousel__zoomer__arrow__wrapper {
+          &:before {
+            background-color: $themeBlueLightColor !important;
+          }
         }
       }
     }

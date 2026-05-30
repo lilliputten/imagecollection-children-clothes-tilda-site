@@ -2,8 +2,16 @@
 
 @use '../variables' as *;
 
+/*! StoreProduct */
+
 #allrecords .js-store-product.js-product {
   @include basicActiveLink;
+  // Quantity combo button
+  .t-store__prod__quantity {
+    border-radius: 30px !important;
+    border-color: color.change(#000, $alpha: 0.2);
+    padding: 0 0.5em;
+  }
   .js-store-tabs {
     // Hide tabs at first
     opacity: 0;
@@ -41,32 +49,30 @@
         overflow: hidden;
       }
     }
-    .Variant.Current img,
-    a.Variant:hover img {
+    .Variant.Current img {
       border: 2px solid $primaryColor;
+    }
+    @media #{$hoverMediaRules} {
+      a.Variant:hover img {
+        border: 2px solid $primaryColor;
+      }
     }
     .Variant.Current img {
       background-color: $primaryColor;
     }
   }
-  // Buttons
-  .t-store__prod-popup__btn-wrapper {
-    a[data-social-id] {
-      // border: 1px solid red;
-      display: inline-block;
-      // border: 0 none;
-      // text-align: center;
-      // white-space: nowrap;
-      vertical-align: middle;
-      // background-image: none;
-      user-select: none;
-      // box-sizing: border-box;
-      margin: 0 0.2em;
-      &,
-      & > svg {
-        width: 45px;
-        height: 45px;
-      }
-    }
-  }
+  // // Buttons
+  // .t-store__prod-popup__btn-wrapper {
+  //   a[data-social-id] {
+  //     display: inline-block;
+  //     vertical-align: middle;
+  //     user-select: none;
+  //     margin: 0 0.2em;
+  //     &,
+  //     & > svg {
+  //       width: 45px;
+  //       height: 45px;
+  //     }
+  //   }
+  // }
 }

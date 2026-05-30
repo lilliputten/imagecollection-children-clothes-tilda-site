@@ -56,18 +56,18 @@ class DisplayStateTracker {
 export function initShopIcons() {
   // Cart node: #t-footer > .t-rec#rec1338906931:not(.uc-Footer) > .t706 > .t706__carticon
   // Favorites node: #t-footer > .t-rec#rec2330348731:not(.uc-Footer) > .t1002 > .t1002__wishlisticon
-  const tFooterSelector = '#t-footer';
-  const tFooter = document.querySelector(tFooterSelector) as HTMLElement | undefined;
-  if (!tFooter) {
+  const rootNodeSelector = '#allrecords';
+  const rootNode = document.querySelector(rootNodeSelector) as HTMLElement | undefined;
+  if (!rootNode) {
     // eslint-disable-next-line no-console
-    console.warn('[ShopIcons:initShopIcons] No tFooter node found', {
-      tFooterSelector,
+    console.warn('[ShopIcons:initShopIcons] No rootNode node found', {
+      rootNodeSelector,
     });
     return;
   }
   // Find cart icon node and create its tracker...
   let cartIconTracker: DisplayStateTracker | undefined;
-  const cartIconSelector = '#t-footer .t706__carticon';
+  const cartIconSelector = `${rootNodeSelector} .t706__carticon`;
   const cartIcon = document.querySelector(cartIconSelector) as HTMLElement | undefined;
   if (!cartIcon) {
     // eslint-disable-next-line no-console
@@ -77,12 +77,12 @@ export function initShopIcons() {
   } else {
     cartIconTracker = new DisplayStateTracker(cartIcon, (isHidden) => {
       // console.log('[ShopIcons:cartIconTracker] cart', isHidden ? 'hidden' : 'visible');
-      tFooter.classList.toggle('with-cart', !isHidden);
+      rootNode.classList.toggle('with-cart', !isHidden);
     });
   }
   // Find wishlist icon node and create its tracker...
   let wishlistIconTracker: DisplayStateTracker | undefined;
-  const wishlistIconSelector = '#t-footer .t1002__wishlisticon';
+  const wishlistIconSelector = `${rootNodeSelector} .t1002__wishlisticon`;
   const wishlistIcon = document.querySelector(wishlistIconSelector) as HTMLElement | undefined;
   if (!wishlistIcon) {
     // eslint-disable-next-line no-console
@@ -92,7 +92,7 @@ export function initShopIcons() {
   } else {
     wishlistIconTracker = new DisplayStateTracker(wishlistIcon, (isHidden) => {
       // console.log('[ShopIcons:wishlistIconTracker] wishlist', isHidden ? 'hidden' : 'visible');
-      tFooter.classList.toggle('with-wishlist', !isHidden);
+      rootNode.classList.toggle('with-wishlist', !isHidden);
     });
   }
   // eslint-disable-next-line no-console

@@ -13,6 +13,7 @@
   }
   #allrecords & .t-menu-base__maincontainer {
     background-color: transparent !important;
+    flex-wrap: nowrap;
   }
   #allrecords & .tmenu-mobile:not(.tmenu-mobile_opened),
   #allrecords & .t-menu-base:not(.t-menu-base__burgermenu_opened) {
@@ -24,7 +25,7 @@
   #allrecords & .t-menu-base__burgermenu_opened,
   #allrecords &:not(.onHero) .t-menu-base {
     background-color: color.change($themeBlueColor, $alpha: 0.7) !important;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(8px);
   }
   #allrecords & .tmenu-mobile_opened .tmenu-mobile__container {
     background-color: $themeBlueColor !important;

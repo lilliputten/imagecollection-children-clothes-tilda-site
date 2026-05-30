@@ -1,13 +1,18 @@
+@use 'sass:color';
+
 @use '../variables' as *;
 
 #allrecords .uc-Blog {
   // @include activeLink;
   .t-feed__col-grid__post-wrapper {
     border-radius: 10px;
+    border: 1px solid color.change(#000, $alpha: 0.1);
     overflow: hidden;
-    transition: all $transitionTimeMs;
-    &:hover {
-      opacity: 0.85;
+    @media #{$hoverMediaRules} {
+      transition: all $transitionTimeMs;
+      &:hover {
+        opacity: $hoverOpacity;
+      }
     }
   }
 }

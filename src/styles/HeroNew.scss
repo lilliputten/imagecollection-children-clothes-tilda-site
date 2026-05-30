@@ -25,11 +25,11 @@
     .t-cover__wrapper {
       vertical-align: bottom;
     }
-    // // Adjust background carrier (upscale move top)
-    // .t-cover__carrier {
-    //   background-position: 50% 100%;
-    //   background-size: auto 120%;
-    // }
+    // Adjust background carrier (upscale move top)
+    .t-cover__carrier {
+      background-position: 50% 100%;
+      background-size: auto 120%;
+    }
   }
   // Wide screens: horizontal layout
   @media (width >= $treshold) {
@@ -50,7 +50,7 @@
       background-size: 125%;
     }
   }
-  // // Adjust banner size...
+  // // UNUSED (?): Adjust banner size...
   // @mixin setHeight($height) {
   //   .t-slds__items-wrapper,
   //   .t-cover__wrapper,

@@ -1,0 +1,54 @@
+@use 'sass:color';
+
+@use '../variables' as *;
+
+/*! NavLinks */
+
+.uc-NavLinks {
+  background-color: color.change($themeBlueColor, $alpha: 0.5);
+  padding: 0.5em 0 !important;
+
+  .t993__items-list {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    gap: 0.5em;
+    @media (width < $mobileTreshold) {
+      flex-direction: column;
+    }
+  }
+  #allrecords & .t-btn {
+    flex: 1 1 auto; // Extend without spaces
+    font-size: 0.85em;
+    border: 1px solid red; // DEBUG
+    margin: 0;
+    min-height: auto;
+    width: auto;
+    padding: 0.5em 1em;
+    border-radius: 1em !important;
+    transition: all $transitionTimeMs;
+    display: flex;
+    background-color: color.change($themeBlueColor, $alpha: 0.5) !important;
+    @media (width >= $mobileTreshold) {
+    }
+    @media #{$hoverMediaRules} {
+      &:hover {
+        background-color: color.change($themeBlueColor, $alpha: 1) !important;
+      }
+    }
+    .t993__btn-text-wrapper {
+      flex: 1;
+      text-align: center;
+      padding: 0;
+    }
+    .t993__btn-text-title {
+      max-width: 100%;
+      overflow: hidden;
+      overflow-wrap: normal;
+      text-overflow: ellipsis;
+    }
+    .t993__btn-arrow {
+      display: none;
+    }
+  }
+}

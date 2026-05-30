@@ -7,14 +7,12 @@ import './project-info.scss';
 import './variables/variables-expose.scss';
 import './styles';
 
-import { initConfirmForms } from './ConfirmForm';
-// import { isDebug } from './core/constants/isDebug';
-// import { isDev } from './core/constants/isDev';
-import { initFooterSocials } from './FooterSocials';
-import { initHero } from './Hero';
+import { initConfirmForms } from './scripts/ConfirmForm';
 import { initNavHeaderNew } from './scripts/NavHeaderNew';
-import { initStoreProduct } from './StoreProduct';
-import { initSubPage } from './SubPage';
+
+// import { initHero } from './scripts/Hero';
+// import { initStoreProduct } from './scripts/StoreProduct';
+// import { initSubPage } from './scripts/SubPage';
 
 /** Print app info */
 function printAppInfo() {
@@ -26,11 +24,10 @@ function printAppInfo() {
 /** Init all the page */
 function initPage() {
   // Start subcomponents...
-  initHero();
-  initSubPage();
-  initStoreProduct();
+  // initHero();
+  // initSubPage();
+  // initStoreProduct();
   initConfirmForms();
-  initFooterSocials();
   initNavHeaderNew();
   // Forcibely update components' dimensions
   window.dispatchEvent(new Event('resize'));

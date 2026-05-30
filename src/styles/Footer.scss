@@ -1,0 +1,17 @@
+@use 'sass:color';
+
+@use '../variables' as *;
+
+/*! Footer */
+
+#allrecords .uc-Footer {
+  @include activeLink;
+  .t420__descr {
+    li {
+      color: color.change(#fff, $alpha: 0.3);
+      a {
+        color: #fff;
+      }
+    }
+  }
+}

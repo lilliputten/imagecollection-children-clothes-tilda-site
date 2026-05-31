@@ -27,8 +27,23 @@ export function initStoreBreadcrumbs() {
     return;
   }
   const { pathname } = window.location;
+  const { referrer } = document;
+  let pathstr = pathname;
+  // Try to find a proper catalog path via a referrer (in case of redirect)...
+  if (!pathstr.startsWith('/catalog/')) {
+    const match = referrer.match('^https://[^/]*(/catalog/.*)$');
+    if (!match?.[1]) {
+      // eslint-disable-next-line no-console
+      console.warn('[StoreBreadcrumbs] Not found proper catalog pathname or referrer', {
+        pathname,
+        referrer,
+      });
+      return;
+    }
+    pathstr = match[1];
+  }
   const titlePaths = Object.keys(catalogTitlesByPaths);
-  const foundPath = titlePaths.find((path) => pathname.startsWith(path)) as
+  const foundPath = titlePaths.find((path) => pathstr.startsWith(path)) as
     | keyof typeof catalogTitlesByPaths
     | undefined;
   const foundTitle = catalogTitlesByPaths[foundPath];
@@ -39,7 +54,11 @@ export function initStoreBreadcrumbs() {
   }
   if (!foundPath || !foundTitle) {
     // eslint-disable-next-line no-console
-    console.warn('[StoreBreadcrumbs] Not found catalog path/title for the pathame:', pathname);
+    console.warn('[StoreBreadcrumbs] Not found catalog path/title', {
+      pathstr,
+      pathname,
+      referrer,
+    });
     // Then remove the last node (rubric template) and the last divider (in the previous node)
     lastItem.remove();
     const prevItemDivider = breadcrumbsListNode.lastElementChild?.querySelector(

@@ -176,7 +176,7 @@ export function initStoreProduct() {
   const rootNode = document.querySelector<HTMLElement>('.t-rec > .t-store');
   if (!rootNode) {
     // eslint-disable-next-line no-console
-    console.warn('[StoreProduct] Not found the root node');
+    console.warn('[StoreProduct] Not found the root node. Do nothing.');
     return;
   }
   const productNode = rootNode?.querySelector<HTMLElement>('.js-store-product.js-product');

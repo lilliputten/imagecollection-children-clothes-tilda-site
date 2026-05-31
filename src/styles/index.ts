@@ -1,5 +1,6 @@
 import './Root.scss';
 import './Blog.scss';
+import './Breadcrumbs.scss';
 import './ConfirmForm.scss';
 import './Footer.scss';
 import './HeroNew.scss';

@@ -11,6 +11,10 @@ body {
   pointer-events: none;
 }
 
+.hidden {
+  display: none;
+}
+
 // Misc styles
 .opacity-50 {
   opacity: 0.5;

@@ -10,11 +10,9 @@ import './styles';
 import { initConfirmForms } from './scripts/ConfirmForm';
 import { initNavHeaderNew } from './scripts/NavHeaderNew';
 import { initShopIcons } from './scripts/ShopIcons';
+import { initStoreBreadcrumbs } from './scripts/StoreBreadcrumbs';
 import { initStoreProduct } from './scripts/StoreProduct';
-
-// import { initHero } from './scripts/Hero';
-// import { initStoreProduct } from './scripts/StoreProduct';
-// import { initSubPage } from './scripts/SubPage';
+import { initStoreTitle } from './scripts/StoreTitle';
 
 /** Print app info */
 function printAppInfo() {
@@ -26,12 +24,12 @@ function printAppInfo() {
 /** Init all the page */
 function initPage() {
   // Start subcomponents...
-  // initHero();
-  // initSubPage();
   initStoreProduct();
   initConfirmForms();
   initNavHeaderNew();
   initShopIcons();
+  initStoreTitle();
+  initStoreBreadcrumbs();
   // Forcibely update components' dimensions
   window.dispatchEvent(new Event('resize'));
 }

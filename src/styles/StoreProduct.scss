@@ -23,6 +23,10 @@
       color: #999;
     }
   }
+  // Product image frame
+  .t-slds__main {
+    border: 1px solid color.change(#000, $alpha: 0.1);
+  }
   .Variants {
     margin: 1em 0;
     display: flex;

@@ -18,18 +18,25 @@ export function processForm(formBottomText: HTMLDivElement) {
   if (initialChecked) {
     checkboxNode.setAttribute('checked', 'true');
   } else {
-    buttonNode?.classList.toggle('disabled', true);
+    buttonNode.classList.toggle('disabled', true);
   }
   checkboxNode.addEventListener('change', () => {
     const checked = checkboxNode.checked;
-    buttonNode?.classList.toggle('disabled', !checked);
+    buttonNode.classList.toggle('disabled', !checked);
   });
-  formBottomText.prepend(checkboxNode);
+  // formBottomText.prepend(checkboxNode);
+  // Wrap with label
+  const label = document.createElement('label');
+  label.prepend(checkboxNode);
+  while (formBottomText.firstChild) {
+    label.appendChild(formBottomText.firstChild);
+  }
+  formBottomText.prepend(label);
 }
 
 export function initConfirmForms() {
   const formBottomTextNodes = document.querySelectorAll<HTMLDivElement>(
-    '[class*="__form-bottom-text"]',
+    '[class*="__form-bottom-text"], .uc-FormCustom .t716__hint, .uc-FormSmall .t716__hint',
   );
   formBottomTextNodes.forEach(processForm);
 }

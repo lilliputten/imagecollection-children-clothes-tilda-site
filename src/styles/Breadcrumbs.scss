@@ -1,0 +1,40 @@
+@use 'sass:color';
+
+@use '../variables' as *;
+
+/*! Breadcrumbs */
+
+.uc-Breadcrumbs {
+  // border: 1px solid red;
+  // NOTE: Copying all tilda styles due to a bug with tpost page
+  font-family: $defaultFont;
+  font-size: $defaultFontSize;
+  .t758__list_item {
+    clear: both;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 16px;
+    display: inline-block;
+    margin: 0;
+    color: #000000;
+    white-space: nowrap;
+  }
+  .t758__link-item__wrapper {
+    display: inline-block;
+    padding-right: 10px;
+    min-height: 19px;
+    vertical-align: middle;
+    float: left;
+  }
+  #allrecords & a {
+    color: #000000;
+  }
+  .t758__breadcrumb-divider {
+    padding-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    float: left;
+    line-height: 19px;
+    height: 19px;
+    color: #858585;
+    font-weight: 300;
+  }
+}

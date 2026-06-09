@@ -1,35 +1,36 @@
 @use 'sass:color';
 
 @use 'variables' as *;
-
-@function rgbComponents($color) {
-  @return color.channel($color, 'red', $space: rgb) color.channel($color, 'green', $space: rgb)
-    color.channel($color, 'blue', $space: rgb);
-}
+@use 'utils' as *;
 
 :root {
-  --themeBgColor: #{$themeBgColor};
+  --themeBgColor: #{hexColor($themeBgColor)};
   --themeBgRGB: #{rgbComponents($themeBgColor)};
 
-  --primaryColor: #{$primaryColor};
+  --primaryColor: #{hexColor($primaryColor)};
   --primaryRGB: #{rgbComponents($primaryColor)};
 
-  // --themeOrangeColor: #{$themeOrangeColor};
-  // --themeOrangeRGB: #{rgbComponents($themeOrangeColor)};
-  //
-  // --themeBlueDarkColor: #{$themeBlueDarkColor};
-  // --themeBlueDarkRGB: #{rgbComponents($themeBlueDarkColor)};
-  // --themeBlueColor: #{$themeBlueColor};
-  // --themeBlueRGB: #{rgbComponents($themeBlueColor)};
-  // --themeBlueLightColor: #{$themeBlueLightColor};
-  // --themeBlueLightRGB: #{rgbComponents($themeBlueLightColor)};
-  // --themeBlueLightestColor: #{$themeBlueLightestColor};
-  // --themeBlueLightestRGB: #{rgbComponents($themeBlueLightestColor)};
-  // --themeGreenColor: #{$themeGreenColor};
-  // --themeGreenRGB: #{rgbComponents($themeGreenColor)};
-  // --themeGreenLightestColor: #{$themeGreenLightestColor};
-  // --themeGreenLightestRGB: #{rgbComponents($themeGreenLightestColor)};
-  //
+  --themePinkColor: #{hexColor($themePinkColor)};
+  --themePinkRGB: #{rgbComponents($themePinkColor)};
+
+  --themeBlueDarkColor: #{hexColor($themeBlueDarkColor)};
+  --themeBlueDarkRGB: #{rgbComponents($themeBlueDarkColor)};
+  --themeBlueColor: #{hexColor($themeBlueColor)};
+  --themeBlueRGB: #{rgbComponents($themeBlueColor)};
+  --themeBlueLightColor: #{hexColor($themeBlueLightColor)};
+  --themeBlueLightRGB: #{rgbComponents($themeBlueLightColor)};
+  --themeBlueLightestColor: #{hexColor($themeBlueLightestColor)};
+  --themeBlueLightestRGB: #{rgbComponents($themeBlueLightestColor)};
+  --themeBlueDarkestColor: #{hexColor($themeBlueDarkestColor)};
+  --themeBlueDarkestRGB: #{rgbComponents($themeBlueDarkestColor)};
+
+  --themeGreenColor: #{hexColor($themeGreenColor)};
+  --themeGreenRGB: #{rgbComponents($themeGreenColor)};
+  --themeGreenDarkColor: #{hexColor($themeGreenDarkColor)};
+  --themeGreenDarkRGB: #{rgbComponents($themeGreenDarkColor)};
+  --themeGreenLightColor: #{hexColor($themeGreenLightColor)};
+  --themeGreenLightRGB: #{rgbComponents($themeGreenLightColor)};
+
   // --defaultFont: #{$defaultFont};
   // --titleFont: #{$titleFont};
   // --defaultFontSize: #{$defaultFontSize};

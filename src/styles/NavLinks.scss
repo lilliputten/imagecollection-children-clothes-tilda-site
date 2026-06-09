@@ -28,14 +28,12 @@
     border-radius: 1em !important;
     transition: all $transitionTimeMs;
     display: flex;
-    background-color: color.change($themeBlueColor, $alpha: 0.5) !important;
-    @media (width >= $mobileTreshold) {
-    }
-    @media #{$hoverMediaRules} {
-      &:hover {
-        background-color: color.change($themeBlueColor, $alpha: 1) !important;
-      }
-    }
+    // background-color: color.change($themeBlueColor, $alpha: 0.5) !important;
+    // @media #{$hoverMediaRules} {
+    //   &:hover {
+    //     background-color: color.change($themeBlueColor, $alpha: 1) !important;
+    //   }
+    // }
     .t993__btn-text-wrapper {
       flex: 1;
       text-align: center;

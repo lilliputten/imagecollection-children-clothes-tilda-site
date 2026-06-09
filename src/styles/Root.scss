@@ -19,3 +19,8 @@ body {
 .opacity-50 {
   opacity: 0.5;
 }
+
+// Shared blocks
+.uc-Text {
+  @include activeLink;
+}

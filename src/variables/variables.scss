@@ -1,21 +1,26 @@
-$themeOrangeColor: #f73; // Active color
+@use 'sass:color';
 
-$themeBlueDarkColor: #19e;
-// $themeBlueDark1Color: #27c;
-$themeBlueColor: #38d;
-$themeBlueLightColor: #bde;
-$themeBlueLightestColor: #eff; // #E8F5FE
-$themeGreenDark1Color: #696;
-$themeGreenColor: #7a7;
-$themeGreenLightestColor: #efe;
+$themePinkColor: #fabbcb; // Active color
 
-$primaryColor: $themeOrangeColor;
+$themeBlueLightColor: #bbdde6;
+$themeBlueColor: color.adjust($themeBlueLightColor, $lightness: -10%);
+$themeBlueDarkColor: color.adjust($themeBlueLightColor, $lightness: -20%);
+$themeBlueLightestColor: color.adjust($themeBlueLightColor, $lightness: 10%);
+$themeBlueDarkestColor: color.adjust($themeBlueDarkColor, $lightness: -20%);
+
+$themeGreenColor: #d9ea9a;
+$themeGreenDarkColor: color.adjust($themeGreenColor, $lightness: -10%);
+$themeGreenLightColor: color.adjust($themeGreenColor, $lightness: 10%);
+
+$primaryColor: $themePinkColor;
 
 $themeGrayColor: #333;
 $themeBgColor: $themeGrayColor;
 
 $socialIconSize: 32px;
 $socialIconSmallSize: 22px;
+
+$headerColor: #666;
 
 // Delays
 
@@ -30,7 +35,7 @@ $hoverOpacity: 0.75;
 // Fonts
 
 $defaultFont: Montserrat, Arial, sans-serif;
-$titleFont: $defaultFont; // Montserrat, Arial, sans-serif;
+$titleFont: $defaultFont;
 $defaultFontSize: 16px;
 
 // Adaptive layouts...

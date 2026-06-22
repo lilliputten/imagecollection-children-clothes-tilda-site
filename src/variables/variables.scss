@@ -1,12 +1,24 @@
 @use 'sass:color';
 
-$themePinkColor: #fabbcb; // Active color
+// $themePinkColor: #fabbcb; // Active color
+
+// $themePinkLightColor: #bbdde6;
+// $themePinkDarkColor: color.adjust($themePinkColor, $lightness: -10%);
+// $themePinkLightColor: color.adjust($themePinkColor, $lightness: 10%);
+// $themePinkDarkestColor: color.adjust($themePinkColor, $lightness: -20%);
+// $themePinkLightestColor: color.adjust($themePinkColor, $lightness: 20%);
+
+$themePinkLightColor: #fabbcb;
+$themePinkColor: color.adjust($themePinkLightColor, $lightness: -10%);
+$themePinkLightestColor: color.adjust($themePinkLightColor, $lightness: 10%);
+$themePinkDarkColor: color.adjust($themePinkLightColor, $lightness: -20%);
+$themePinkDarkestColor: color.adjust($themePinkDarkColor, $lightness: -30%);
 
 $themeBlueLightColor: #bbdde6;
 $themeBlueColor: color.adjust($themeBlueLightColor, $lightness: -10%);
-$themeBlueDarkColor: color.adjust($themeBlueLightColor, $lightness: -20%);
 $themeBlueLightestColor: color.adjust($themeBlueLightColor, $lightness: 10%);
-$themeBlueDarkestColor: color.adjust($themeBlueDarkColor, $lightness: -20%);
+$themeBlueDarkColor: color.adjust($themeBlueLightColor, $lightness: -20%);
+$themeBlueDarkestColor: color.adjust($themeBlueDarkColor, $lightness: -30%);
 
 $themeGreenColor: #d9ea9a;
 $themeGreenDarkColor: color.adjust($themeGreenColor, $lightness: -10%);

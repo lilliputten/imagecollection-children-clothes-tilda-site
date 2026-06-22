@@ -5,7 +5,7 @@
 /*! NavHeaderNew */
 
 .uc-NavHeaderNew {
-  $linksColor: $themePinkColor;
+  $linksColor: $themePinkLightColor;
   $bgColor: #333; // $themeBlueColor;
   // Link hovers...
   @include basicActiveLink;

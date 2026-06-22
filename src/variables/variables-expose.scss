@@ -10,8 +10,16 @@
   --primaryColor: #{hexColor($primaryColor)};
   --primaryRGB: #{rgbComponents($primaryColor)};
 
+  --themePinkDarkColor: #{hexColor($themePinkDarkColor)};
+  --themePinkDarkRGB: #{rgbComponents($themePinkDarkColor)};
   --themePinkColor: #{hexColor($themePinkColor)};
   --themePinkRGB: #{rgbComponents($themePinkColor)};
+  --themePinkLightColor: #{hexColor($themePinkLightColor)};
+  --themePinkLightRGB: #{rgbComponents($themePinkLightColor)};
+  --themePinkLightestColor: #{hexColor($themePinkLightestColor)};
+  --themePinkLightestRGB: #{rgbComponents($themePinkLightestColor)};
+  --themePinkDarkestColor: #{hexColor($themePinkDarkestColor)};
+  --themePinkDarkestRGB: #{rgbComponents($themePinkDarkestColor)};
 
   --themeBlueDarkColor: #{hexColor($themeBlueDarkColor)};
   --themeBlueDarkRGB: #{rgbComponents($themeBlueDarkColor)};
